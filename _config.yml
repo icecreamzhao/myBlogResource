@@ -1,0 +1,131 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+server:
+  port: 4001
+  compress: true
+  header: true
+
+# Site
+title: LittleboyDK's Blog
+subtitle: 特别不靠谱
+description: 对前端特别感兴趣的后端工程师
+keywords: "后端,java,Spring,database,算法"
+author: littleboyDK
+language: zh
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://icecreamzhao.github.io
+root: /
+permalink: :title.html
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: false # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 2
+  order_by: 
+    date: -1
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+    读书笔记: reading_note
+    开发笔记: develop_note
+    快乐的Linux命令行: The_Linux_Command_Line
+    linux的一些基本操作: Linux_Basic_Operation
+    自己的一些项目: my_project
+    商城: shopping_mall
+    操作系统: compcuter-operation
+    
+tag_map:
+    hexo起步: hexo-firstStep
+    hexo插件: hexo-plugins
+    Java小知识点: java-taps
+    操作系统: compcuter-operation
+    商城开发: shopping_mall
+    快乐的Linux命令行: The_Linux_Command_Line
+    小知识点: taps
+    
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 8
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: yilia
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:icecreamzhao/icecreamzhao.github.io.git
+  branch: master
+
+ # mermaid chart
+mermaid: ## mermaid url https://github.com/knsv/mermaid
+  enable: true  # default true
+  version: "7.1.2" # default v7.1.2
+  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+    #startOnload: true  // default true
+
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: false
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: true
+      link: false
+      permalink: false
+      excerpt: false
+      categories: true
+      tags: true
