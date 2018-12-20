@@ -9,21 +9,19 @@ tags:
 - 小知识点
 ---
 
-## 思路
+# 思路
 
 主要使用了`org.mybatis.generator.api.MyBatisGenerator`这个类, 该类使用xml文件来对表进行映射, 从而创建对应的实体类。
 
-
-
 <!--more-->
 
-## 流程
+<br>
+
+# 流程
 
 1. 创建一个用来存储警告信息的list
 2. 将映射文件初始化mybatis的配置类中
 3. 执行generate()方法
-
-
 
 实际操作:
 
@@ -54,9 +52,9 @@ public class MybatisGenerateClass {
 }
 ```
 
+<br>
 
-
-## 映射文件
+# 映射文件
 
 需要包含:
 

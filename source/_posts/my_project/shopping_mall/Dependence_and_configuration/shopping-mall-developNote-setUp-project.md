@@ -8,17 +8,17 @@ tags:
 - 商城开发
 ---
 
-### 项目说明
+# 项目说明
 
-
-
-#### 简介
+## 简介
 
 本项目用 intellij idea 进行开发, Maven管理项目依赖, 技术栈是传统的SSM (Spring, SpringMVC, Mybatis)框架, 前台使用vue
 
 <!--more-->
 
-#### 框架
+<br>
+
+## 框架
 
 本项目包含了八个工程, 分别是:
 
@@ -56,15 +56,17 @@ tags:
 
 OK, 大概介绍了一下这个项目, 那么, 现在就开始动手搭建起来吧!
 
-### 准备工作
+<br>
+
+## 准备工作
 
 [dubbo](http://dubbo.apache.org/zh-cn/docs/user/preface/background.html)
 
 首先下载[intellij idea](http://www.jetbrains.com/idea/), 选择IU版, 下载安装激活一条龙
 
+<br>
 
-
-#### 新建项目
+## 新建项目
 
 打开你的idea, `File -> New -> project -> empty project`, 填写你的项目名称和路径
 
@@ -137,5 +139,7 @@ OK, 这个是我们这个项目最后的样子!
 ![最后的项目文件结构](/images/my-project/shopping-mall/idea-create-project13.png)
 
 大功告成! 我们成功的搭建起了一个SOA架构的项目!
+
+<br>
 
 下一篇我们要搞一搞这个项目的其他依赖。

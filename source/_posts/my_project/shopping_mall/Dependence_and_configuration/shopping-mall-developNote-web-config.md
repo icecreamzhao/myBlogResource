@@ -8,7 +8,7 @@ tags:
 - 商城开发
 ---
 
-### Spring MVC的配置
+# Spring MVC的配置
 
 主要包括了注解配置, 拦截器配置, 自动扫描配置和最重要的dubbo配置 ~~其实还包括一个静态资源配置, 但是因为咱们的前端使用的是vue, Spring MVC就不用管这里了~~
 
@@ -80,9 +80,9 @@ tags:
 
 没关系, 我们来一个一个讲。
 
+<br>
 
-
-#### <mvc:annotaion-driven />
+## <mvc:annotaion-driven />
 
 这个其实是简写的一种形式, 通过这种写法能让我们省去很多配置, 它会帮我们自动注册 `DefaultAnnotationHandlerMapping` 和 `AnnotationMethodHandlerAdapter`, 这两个bean是Spring为`@controller`分发请求所必需的。
 
@@ -90,9 +90,9 @@ tags:
 
 对于Spring的基础, [这篇博客](http://elf8848.iteye.com/blog/875830)讲的很详细, 可以看一看。
 
+<br>
 
-
-#### <mvc:default-servlet-handler />
+## <mvc:default-servlet-handler />
 
 这个和访问静态资源有关, 访问静态资源有三种方案。
 
@@ -119,8 +119,6 @@ tags:
 
    每一种静态资源都需要配置一个Servlet
 
-   ​
-
 2. 使用Spring的提供的配置来处理。例子:
 
    ```xml
@@ -129,14 +127,13 @@ tags:
 
    mapping属性配置了对于静态资源的请求路径, location属性配置了静态资源所在路径。
 
+<br>
 
-
-
-#### 拦截器
+## 拦截器
 
 接下来我配置了一个拦截器, 因为当我搭建好项目, 弄好前端, 进行第一次访问时发现报错, 打开f12一看发现了这个:
 
-![Spring+ajax请求被阻塞](/images/Spring+ajax请求被阻塞.png)
+![Spring+ajax请求被阻塞](/images/Spring+ajax-request-block.png)
 
 我仔细的查了以下, 发现contentType(就是发送请求的文件类型)为三个常用格式以外的格式, 如`application/json` 时, 会先发送一个试探的OPTIONS类型的请求发送给服务端, 这个时候, 修改请求头是没有用的, 因为还没有走到。
 
@@ -211,21 +208,19 @@ public class CommonInterceptor implements HandlerInterceptor {
 
 这样浏览器会发送的两个请求就都会成功了。
 
-
-
 接下来配置了一个配置文件, 视图解析器。
 
+<br>
 
-
-#### dubbo配置
+# dubbo配置
 
 在service工程中我们接触过一次, 只不过那一次是声明服务, 而这一次是接收服务。
 
 同样也需要声明dubbo服务的工程名以及注册中心地址~~(也就是zookeeper的地址)~~, 然后就是需要使用的服务id和接口了。
 
+<br>
 
-
-### mybatis配置
+# mybatis配置
 
 其实mybatis的配置文件没有什么东西, 但是, 这个配置文件得有, 所以还是得写一下。
 
@@ -242,9 +237,9 @@ public class CommonInterceptor implements HandlerInterceptor {
 </configuration>
 ```
 
+<br>
 
-
-### web配置
+# web配置
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -307,6 +302,6 @@ public class CommonInterceptor implements HandlerInterceptor {
 
 随便看看就行了, 没什么难的, 首先加载了Spring配置, 配置了SpringMVC的监听器和过滤器, 设置了Spring的DispatcherServlet, 需要注意, 访问的如果是jsp的话, 是不会被DispatcherServlet处理的。
 
-
+<br>
 
 ok, 后端配置总算是讲完了, 接下来该聊一聊前端了。

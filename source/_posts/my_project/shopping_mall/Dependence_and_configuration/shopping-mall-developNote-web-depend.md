@@ -8,7 +8,7 @@ tags:
 - 商城开发
 ---
 
-### web的依赖
+# web的依赖
 
 不同于其他的工程, 它的打包方式是web工程的打包方式, 所以应该是:
 
@@ -16,7 +16,7 @@ tags:
 <packaging>war</packaging>
 ```
 
-
+<br>
 
 由于是表现层, 所以依赖中应该包括SpringMVC, 下面是它的所有依赖:
 
@@ -121,7 +121,7 @@ tags:
 </dependencies>
 ```
 
-
+<br>
 
 由于是web工程, 所以和service一样, 也需要tomcat插件:
 

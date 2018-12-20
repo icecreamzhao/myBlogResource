@@ -8,11 +8,13 @@ tags:
 - 商城开发
 ---
 
-### 数据库配置
+# 数据库配置
 
 如果把配置写到xml配置文件中会显得很乱, 而且不好改, 如果有多个数据库的话, 会非常不方便, 那么可以单独写到一个配置文件中, 这样如果有多个数据库配置的话, 就可以直接切换配置文件了。
 
 <!--more-->
+
+<br>
 
 下面是我的数据库配置文件(db.properties):
 
@@ -30,9 +32,9 @@ web.view.prefix=/WEB-INF/views/
 web.view.suffix=.html
 ```
 
+<br>
 
-
-### Spring 配置
+# Spring 配置
 
 Spring 配置主要分为三个, 
 
@@ -40,9 +42,9 @@ Spring 配置主要分为三个,
 2. service层配置
 3. 事务配置
 
+<br>
 
-
-#### dao层配置
+## dao层配置
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -86,9 +88,9 @@ Spring 配置主要分为三个,
 
 这里有一个Mapper扫描器和配置mybaits的东西, 这里涉及到了mybatis的自动生成实体类和Mapper, [这篇讲到了这个。](/my_project/shopping_mall/taps/shopping-mall-developNote-mybatis-automatic-generation.html)
 
+<br>
 
-
-#### service 层配置
+## service 层配置
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -126,9 +128,9 @@ Spring 配置主要分为三个,
 
 最后配置了dubbo的端口和服务接口
 
+<br>
 
-
-#### translation 配置
+## translation 配置
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -178,9 +180,9 @@ Spring 配置主要分为三个,
 
 没啥可说的, 配置了事务, 并使用aop将事务切入到service中, 可以看看数据库方面的书来补充一下事务方面的知识。
 
+<br>
 
-
-#### web.xml
+## web.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -211,6 +213,6 @@ Spring 配置主要分为三个,
 
 配置了Spring的监听器, 加载Spring容器
 
-
+<br>
 
 下一篇讲web工程的配置。

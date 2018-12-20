@@ -8,15 +8,15 @@ tags:
 - linux
 ---
 
-## 前言
+# 前言
 
 在windows上写好了一个项目, 想部署到linux环境运行试试看, 嗯, 这个就是这篇博客的前提。
 
-
-
 <!--more-->
 
-### 配置Java
+<br>
+
+# 配置Java
 
 嗯, Java是第一个就应该配置的东西, 那么我们采用比较传统的做法来配置。
 
@@ -51,9 +51,9 @@ java -version
 javac -version
 ```
 
+<br>
 
-
-### 配置Maven
+# 配置Maven
 
 其实流程都是一样的, 先下载Maven压缩包:
 
@@ -70,9 +70,9 @@ export MAVEN_HOME=/home/usr/maven/apache-maven-3.6.0
 export PATH=$PATH:$MAVEN_HOME/bin
 ```
 
+<br>
 
-
-### 配置Git
+# 配置Git
 
 其实Git官网上有教怎样下载: [Linux配置Git](https://git-scm.com/download/linux)
 
@@ -82,9 +82,9 @@ export PATH=$PATH:$MAVEN_HOME/bin
 $ apt-get install git
 ```
 
+<br>
 
-
-### 配置zookeeper
+# 配置zookeeper
 
 下载...
 
@@ -136,10 +136,8 @@ $ sh zkServer.sh status //检查状态
 $ sh zkServer.sh stop //停止
 ```
 
+<br>
 
-
-
-
-## 总结
+# 总结
 
 非常的简单, 就是环境变量那里稍微有点复杂, 但是稍微研究一下就应该没什么问题了, 嗯, 大概就是这样了。

@@ -8,9 +8,7 @@ tags:
 - 商城开发
 ---
 
-## Vue简介
-
-
+# Vue简介
 
 其实不用我多说, 人家[官网](https://cn.vuejs.org/)写的比我写的明白, 渐进式JavaScript框架。
 
@@ -20,7 +18,9 @@ tags:
 
 <!--more-->
 
-## Vue 环境搭建
+<br>
+
+# Vue 环境搭建
 
 其实呢, vue就是一个js文件, 引入就行了, 但是除此之外还有一个东西叫做Vue-cli, 是用来构建交互式项目的脚手架, 基于webpack, 这个是[官方文档](https://cli.vuejs.org/zh/guide/)。
 
@@ -44,9 +44,9 @@ vue init webpack vue_demo
 
 来创建一个基于webpack的vue项目, 这样环境就初步搭建成功了。
 
+<br>
 
-
-## Vue项目介绍与配置
+# Vue项目介绍与配置
 
 先来看看都有哪些目录:
 
@@ -64,8 +64,6 @@ vue init webpack vue_demo
 
 端口号, eslint的启用等等, 都是在`config --> index.js` 这个文件里面配置, 大家可以自己随便看看。
 
-
-
-
+<br>
 
 OK, 整个项目的介绍, 依赖以及相关的配置都介绍完了, 接下来我会慢慢的琢磨业务, 并用这些技术来实现, 嗯。

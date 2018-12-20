@@ -8,9 +8,7 @@ tags:
 - linux
 ---
 
-## ubuntu添加环境变量
-
-
+# ubuntu添加环境变量
 
 分三种添加方式, 作用域不同
 
@@ -18,11 +16,11 @@ tags:
 * 只作用于当前用户
 * 作用于所有用户
 
-
-
 <!--more-->
 
-#### 只作用于当前终端
+<br>
+
+## 只作用于当前终端
 
 使用`export`命令添加, 如果当前终端被关闭就失效。
 
@@ -33,9 +31,9 @@ export PATH=$PATH:/path/to/your/dir
 export PATH=/path/to/your/dir:$PATH
 ```
 
+<br>
 
-
-#### 作用于当前用户
+## 作用于当前用户
 
 修改用户根目录下的`.bashrc`文件, 将`export`命令添加到这个文件中。
 
@@ -47,9 +45,9 @@ source ~/.bashrc
 
 将添加的环境变量马上生效
 
+<br>
 
-
-#### 作用于所有用户
+## 作用于所有用户
 
 以相同的方式修改`/etc/profile`文件。
 

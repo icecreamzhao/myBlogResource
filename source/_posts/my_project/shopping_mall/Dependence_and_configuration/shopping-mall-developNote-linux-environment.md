@@ -9,37 +9,35 @@ tags:
 - linux
 ---
 
-## 在Linux系统(CentOS)下搭建运行环境
+# 在Linux系统(CentOS)下搭建运行环境
 
+<br>
 
-
-###前言
+## 前言
 
 由于[这篇文章](/operation_system/deploy-system.html), 我尝试着把我的项目放到linux系统上运行试试看, 然后就有了这篇总结。
 
-
-
 <!--more-->
 
-### 准备
+<br>
+
+## 准备
 
 * 一台已经装好linux系统的电脑
 
-
-
 嗯, 只需要这些, 具体装机的教程[看这里](/operation_system/deploy-system.html)。
 
+<br>
 
-
-### 搭建环境
+## 搭建环境
 
 具体的步骤[看这里](/linux/Linux_Basic_Operation/linux-java-git-maven-zookeeper.html)
 
 按照以上步骤我们就可以得到一台安装好java, maven, git以及zookeeper的linux系统的电脑了。
 
+<br>
 
-
-### 启动项目
+## 启动项目
 
 我们现在用的是linux系统, 当然要使用全自动化来做我们想做的事情啦, 所以编写shell脚本来运行我们的项目。
 
@@ -69,8 +67,6 @@ mvn tomcat7:run
 4. 等待20秒(8行)
 5. 启动web project(10 - 11行)
 
-
-
 > startService.sh
 
 ```shell
@@ -80,76 +76,74 @@ cd $service
 mvn tomcat7:run
 ```
 
+<br>
 
+## 遇到的问题
 
-### 遇到的问题
-
-
-
-#### jdk解压缩的问题
+### jdk解压缩的问题
 
 oracle官网的jdk压缩包解压不了,  [这篇文章](/linux/Linux_Basic_Operation/linux-java-git-maven-zookeeper.html)里有讲。
 
+<br>
 
-
-#### 启动项目不能访问的问题
+### 启动项目不能访问的问题
 
 启动项目之后访问不了, ubuntu没有这个问题, CentOS有, 因为CentOS自带防火墙, 需要将指定的端口设为白名单
 
-##### 查看防火墙状态
+#### 查看防火墙状态
 
 ```shell
 $ systemctl status firewalld
 ```
 
-##### 开启防火墙并设置开机自启
+#### 开启防火墙并设置开机自启
 
 ```shell
 $ systemctl start firewalld
 $ systemctl enable firewalld
 ```
 
-##### 开放端口
+#### 开放端口
 
 ```shell
 $ firewall-cmd --zone=public --add-port=22/tcp --permanent
 $ firewall-cmd --reload # 重新载入使更改生效
 ```
 
-##### 查看指定端口是否开放
+#### 查看指定端口是否开放
 
 ```shell
 $ firewall-cmd --zone=public --query-port=22/tcp
 ```
 
-##### 查看所有开放端口
+#### 查看所有开放端口
 
 ```shell
 $ firewall-cmd --zone=public --list-ports
 ```
 
-##### 关掉开放的端口
+#### 关掉开放的端口
 
 ```shell
 $ firewall-cmd --zone=public --remove-port=22/tcp --permanent
 $ firewall-cmd --reload # 重新载入使更改生效
 ```
 
-##### 批量开放端口
+#### 批量开放端口
 
 ```shell
 $ firewall-cmd --zone=public --add-port=100-500/tcp --permanent
 $ firewall-cmd --reload # 重新载入使更改生效
 ```
 
-##### 批量限制端口
+#### 批量限制端口
 
 ```shell
 $ firewall-cmd --zone=public --remove-port=100-500/tcp --permanent
 $ firewall-cmd --reload
 ```
 
-##### 开放ip
+#### 开放ip
 
 ```shell
 $ firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.0.200" port protocol="tcp" port="80" reject"
@@ -158,20 +152,20 @@ $ firewall-cmd --reload # 重新载入使更改生效
 
 限制指定ip访问指定端口
 
-##### 查看设置的规则
+#### 查看设置的规则
 
 ```shell
 $ firewall-cmd --zone=public --list-rich-rules
 ```
 
-##### 解除ip限制
+#### 解除ip限制
 
 ```shell
 $ firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.0.200" port protocol="tcp" port="80" accept"
 $ firewall-cmd --reload # 重新载入使更改生效
 ```
 
-##### 限制ip段
+#### 限制ip段
 
 ```shell
 $ firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="10.0.0.0/24" port protocol="tcp" port="80" reject"
@@ -197,7 +191,7 @@ $ firewall-cmd --reload # 重新载入使更改生效
 | /17  | 32768  | 255.255.128.0   | 128     |
 | /16  | 65536  | 255.255.0.0     | 256     |
 
-##### 打开限制ip段
+#### 打开限制ip段
 
 ```shell
 $ firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="10.0.0.0/24" port protocol="tcp" port="80" accept"
