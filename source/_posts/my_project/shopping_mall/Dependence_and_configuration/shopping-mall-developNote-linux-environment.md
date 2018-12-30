@@ -88,7 +88,7 @@ oracle官网的jdk压缩包解压不了,  [这篇文章](/linux/Linux_Basic_Oper
 
 ### 启动项目不能访问的问题
 
-启动项目之后访问不了, ubuntu没有这个问题, CentOS有, 因为CentOS自带防火墙, 需要将指定的端口设为白名单
+* 启动项目之后访问不了, ubuntu没有这个问题, CentOS有, 因为CentOS自带防火墙, 需要将指定的端口设为白名单
 
 #### 查看防火墙状态
 
@@ -198,3 +198,18 @@ $ firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1
 $ firewall-cmd --reload # 重新载入使更改生效
 ```
 
+* 还有一种情况是端口已经被占用
+
+这种情况可以使用
+
+```shell
+$ netstat -nl | grep 8080
+```
+
+来查看指定的端口号有没有被占用, 更多的选项请输入
+
+```shell
+$ man netstat
+```
+
+来查看
