@@ -60,4 +60,49 @@ extension=pdo_mysql
 ```ini
 extension=php_curl.dll
 ```
+接着是很重要的一部分, 配置扩展的路径。
+先全局搜索一下`extension_dir`这个字段, 如果没有则加上, 值设为你的扩展文件夹的绝对路径:
+```ini
+extension_dir = "c:\php\ext"
+```
 
+> 注意, 如果遇到了 `call to undifined function: ***` 之类的报错, 则找到这个方法需要的扩展, 并将该扩展前的分号移除。
+
+<br>
+
+## 配置apache
+找到apache根目录下的conf/httpd.conf文件并编辑, 在结尾处加上:
+```conf
+loadModule php5_module C:/php/php5apache2_4.dll
+PHPIniDir "C:/php/"
+AddType application/x-httpd-php .php
+
+# 下面的配置主要为了防止 curl_init 函数不能被加载
+LoadFile C:\php\php5ts.dll
+LoadFile C:\php\libeay32.dll
+LoadFile C:\php\ssleay32.dll
+LoadFile C:\php\libssh2.dll
+# 这里需要将这几个文件拷贝到 C:/windows/system32 (64位放在 C:/windows/SysWQOW64 目录下)和apache 根目录的bin下
+```
+还有一个可选设置是apache的网页文件目录:
+```conf
+DocumentRoot "${SRVROOT}/htdocs"
+```
+和这一行:
+```conf
+# 这里填写你自己的根目录的绝对路径
+Define SRVROOT "C:/server/apache/Apache24"
+```
+接着来安装服务:
+```shell
+httpd -k install
+```
+最后来测试运行:
+```shell
+httpd -k start
+```
+> 注意, 如果在这期间出现了类似于"通常每个套接字地址(协议/网络地址/端口)只允许使用一次"类似的问题, 那么查看他需要使用的端口号, 然后输入`netstat -a -o`来查看端口占用情况, 找到其pid, 并在任务管理器中找到该进程并结束掉就好。
+
+> 注意, 路径中不能出现中文和空格
+
+这样, 我们的php环境和apache服务器就配置好了。
