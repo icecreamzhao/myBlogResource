@@ -68,16 +68,26 @@ category_map:
     linux的一些基本操作: Linux_Basic_Operation
     自己的一些项目: my_project
     商城: shopping_mall
-    操作系统: compcuter-operation
+    操作系统: computer-operation
+    基础知识: computer-base
+    软件安装: software-setup
+    读开源项目: read-open-source
+    JavaScript权威指南: The-Definitive-Guide-read-note
+    软件整理: software-sorting
+    编程: coding
     
 tag_map:
     hexo起步: hexo-firstStep
     hexo插件: hexo-plugins
     Java小知识点: java-taps
-    操作系统: compcuter-operation
+    操作系统: computer-operation
     商城开发: shopping_mall
     快乐的Linux命令行: The_Linux_Command_Line
     小知识点: taps
+    软件安装: software-setup
+    开源项目: open-source
+    编程: coding
+    软件: software
     
 
 # Date / Time format
