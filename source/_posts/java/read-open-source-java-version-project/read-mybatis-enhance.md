@@ -90,11 +90,11 @@ public void createMysqlTable() {
 	allTableMapConstruct(mySqlTypeAndLengthMap, classes, newTableMap, modifyTableMap, addTableMap, removeTableMap,
 			dropKeyTableMap, dropUniqueTableMap);
 
-	// 根据传入的map，分别去创建或修改表结构
-	createOrModifyTableConstruct(newTableMap, modifyTableMap, addTableMap, removeTableMap, dropKeyTableMap,
-			dropUniqueTableMap);
-}
-```
+		// 根据传入的map，分别去创建或修改表结构
+		createOrModifyTableConstruct(newTableMap, modifyTableMap, addTableMap, removeTableMap, dropKeyTableMap,
+				dropUniqueTableMap);
+	}
+	```
 嗯, 注释写的已经非常清楚了, 首先检测用户配置的状态是什么, 然后构建操作表的sql, 最后进行实际操作。
 值得注意的是, 这里有一个操作可以根据用户配置的包名来获取到所有实体类的Class, [这篇博文](/java/read-open-source-java-version-project/read-mybatis-enhance-ClassTools.html)对这里进行了分析。
 
@@ -186,3 +186,8 @@ private void allTableMapConstruct(Map<String, Object> mySqlTypeAndLengthMap, Set
 	}
 }
 ```
+首先遍历实体类class集合, 检测是否声明了`@Table`注解, 这里利用了反射机制, 使用了Class类的`getAnnotation(Class<?>)`方法, 检测该类是否声明了参数中传入的注解。
+接着声明了一些集合, 分别用来存储新增表的字段, 删除的字段, 修改的字段, 新增的字段, 删除主键的字段以及删除唯一约束的字段。
+然后将所有的实体类的字段获取到, [这篇博文](/)对这里进行了分析。
+接着如果用户声明的策略是create, 则删除所有的表重新创建。
+接着判断表是否存在, 当表不存在时, 直接创建新表。当表已经存在时, 先查出表的结构, 接着
