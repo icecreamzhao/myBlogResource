@@ -5,7 +5,9 @@ categories:
 - 读书笔记
 - 快乐的Linux命令行
 tags:
+- 笔记
 - 快乐的Linux命令行
+- linux
 ---
 
 [第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)<br>[第二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)<br>[第三天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)<br>[第四天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)<br>

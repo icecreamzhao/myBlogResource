@@ -5,7 +5,9 @@ categories:
 - 读书笔记
 - 快乐的Linux命令行
 tags:
+- 笔记
 - 快乐的Linux命令行
+- linux
 ---
 
 [第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)<br>[第二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)<br>
@@ -33,7 +35,7 @@ tags:
 $ type command # comman是你要查看的命令
 ```
 
-##显示一个可执行程序的位置
+## 显示一个可执行程序的位置
 
 ```shell
 $ which command # command是要查看的命令, 只对可执行程序有效, 不包含内建命令和命令别名

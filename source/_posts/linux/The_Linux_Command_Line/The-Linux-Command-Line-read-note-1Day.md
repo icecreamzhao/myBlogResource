@@ -5,7 +5,9 @@ categories:
 - 读书笔记
 - 快乐的Linux命令行
 tags:
+- 笔记
 - 快乐的Linux命令行
+- linux
 ---
 
 > [本书中文版](https://github.com/billie66/TLCL/tree/gh-pages/book)

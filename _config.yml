@@ -75,6 +75,7 @@ category_map:
     JavaScript权威指南: The-Definitive-Guide-read-note
     软件整理: software-sorting
     编程: coding
+    C程序设计语言: c-programming-language
     
 tag_map:
     hexo起步: hexo-firstStep
@@ -84,10 +85,13 @@ tag_map:
     商城开发: shopping_mall
     快乐的Linux命令行: The_Linux_Command_Line
     小知识点: taps
-    软件安装: software-setup
-    开源项目: open-source
+    软件安装: software_setup
+    开源项目: open_source
     编程: coding
     软件: software
+    hexo同步: hexo_sync
+    小技巧: taps
+    笔记: read_note
     
 
 # Date / Time format

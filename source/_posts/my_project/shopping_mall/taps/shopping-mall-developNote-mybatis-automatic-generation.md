@@ -25,6 +25,19 @@ tags:
 
 实际操作:
 
+首先需要使用mybatis-generator的依赖:
+
+```xml
+ <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
+<dependency>
+       <groupId>org.mybatis.generator</groupId>
+       <artifactId>mybatis-generator-core</artifactId>
+       <version>1.3.7</version>
+</dependency>
+```
+
+接着是使用方法:
+
 ```java
 import java.io.File;
 import java.util.ArrayList;
@@ -36,7 +49,7 @@ import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
 public class MybatisGenerateClass {
-  public static void generateClass() throws Exception() {
+  public static void generateClass() throws Exception {
     // 1. 创建一个用来存储警告信息的list
     List<String> warningsList = new ArrayList<String>();
     // 2. 将映射文件初始化mybatis的配置类中

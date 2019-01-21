@@ -22,6 +22,8 @@ tags:
 <!--more-->
 
 ### Linux version
+[linux下的php下载地址](http://www.php.net/downloads.php)
+同样, 使用tar解压就好
 
 <br>
 
@@ -34,6 +36,13 @@ tags:
 下载好之后应该是一个压缩包的形式, 直接解压就好。
 
 ### Linux version
+
+centos下可以直接使用`yum`命令来安装。
+```cmd
+yum install httpd -y
+```
+安装完之后可以在`/etc/httpd`目录下找到。
+
 
 <br>
 
