@@ -12,7 +12,7 @@
   <% } %>
 <% } else { %>
   <% var last; %>
-  <% page.posts.each(function(post, i){ %>
+  <% page.posts.sort('date', -1).each(function(post, i){ %>
     <% var year = post.date.year(); %>
     <% if (last != year){ %>
       <% if (last != null){ %>

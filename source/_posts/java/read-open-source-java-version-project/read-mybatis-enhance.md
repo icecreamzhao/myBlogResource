@@ -2,11 +2,13 @@
 title: 读mybatis-enhance开源项目
 date: 2019-01-12 14:12:43
 categories:
-- Java
 - 读开源项目
+- Java
+- mybatis-enhance
 tags:
 - mybatis
 - 开源项目
+- mybatis-enhance
 ---
 
 # 前言
@@ -17,7 +19,7 @@ mybatis 和 hibernate 是最受欢迎的orm框架之二, 但是我一直觉得hi
 <!--more-->
 
 # 实现思路
-<br>
+
 ## 注解层
 
 这个工具有三个注解, 分别是 `Column`, `LengthCount` 和 `Table`
@@ -25,8 +27,6 @@ mybatis 和 hibernate 是最受欢迎的orm框架之二, 但是我一直觉得hi
 * Column 是注解到字段上的, 用来指定字段的名字, 类型, 长度等
 * LengthCount 是用来标记数据库类型的长度
 * Table 用来指定表名
-
-<br>
 
 ## 入口
 
@@ -47,11 +47,7 @@ public void startHandler() {
 }
 ```
 
-<br>
-
 可以看到该方法调用了`SysMysqlCreateTableManager`这个类的`createMysqlTable()`方法:
-
-<br>
 
 ```java
 public void createMysqlTable() {
@@ -90,15 +86,13 @@ public void createMysqlTable() {
 	allTableMapConstruct(mySqlTypeAndLengthMap, classes, newTableMap, modifyTableMap, addTableMap, removeTableMap,
 			dropKeyTableMap, dropUniqueTableMap);
 
-		// 根据传入的map，分别去创建或修改表结构
-		createOrModifyTableConstruct(newTableMap, modifyTableMap, addTableMap, removeTableMap, dropKeyTableMap,
-				dropUniqueTableMap);
-	}
+	// 根据传入的map，分别去创建或修改表结构
+	createOrModifyTableConstruct(newTableMap, modifyTableMap, addTableMap, removeTableMap, dropKeyTableMap,
+			dropUniqueTableMap);
+}
 	```
 嗯, 注释写的已经非常清楚了, 首先检测用户配置的状态是什么, 然后构建操作表的sql, 最后进行实际操作。
 值得注意的是, 这里有一个操作可以根据用户配置的包名来获取到所有实体类的Class, [这篇博文](/java/read-open-source-java-version-project/read-mybatis-enhance-ClassTools.html)对这里进行了分析。
-
-<br>
 
 ## 构建出全部表的增删改的map
 
@@ -179,8 +173,8 @@ private void allTableMapConstruct(Map<String, Object> mySqlTypeAndLengthMap, Set
 			// 2. 找出删除的字段
 			// 3. 找出更新的字段
 			buildAddAndRemoveAndModifyFields(mySqlTypeAndLengthMap, modifyTableMap, addTableMap, removeTableMap,
-					dropKeyTableMap, dropUniqueTableMap, table, newFieldList, removeFieldList, addFieldList,
-					modifyFieldList, dropKeyFieldList, dropUniqueFieldList, tableColumnList, columnNames);
+				dropKeyTableMap, dropUniqueTableMap, table, newFieldList, removeFieldList, addFieldList,
+				modifyFieldList, dropKeyFieldList, dropUniqueFieldList, tableColumnList, columnNames);
 
 		}
 	}
@@ -190,4 +184,4 @@ private void allTableMapConstruct(Map<String, Object> mySqlTypeAndLengthMap, Set
 接着声明了一些集合, 分别用来存储新增表的字段, 删除的字段, 修改的字段, 新增的字段, 删除主键的字段以及删除唯一约束的字段。
 然后将所有的实体类的字段获取到, [这篇博文](/)对这里进行了分析。
 接着如果用户声明的策略是create, 则删除所有的表重新创建。
-接着判断表是否存在, 当表不存在时, 直接创建新表。当表已经存在时, 先查出表的结构, 接着
+接着判断表是否存在, 当表不存在时, 直接使用所有的字段和表名初始化集合。当表已经存在时, 将已经存在的表的结构和实体类中声明的表的结构进行对比, 将所有需要修改的字段初始化到集合中。

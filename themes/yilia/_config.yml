@@ -2,7 +2,7 @@
 
 menu:
   主页: /
-  标签: /tags
+  # 标签: /tags
   分类: /categories
   归档: /archives
 
@@ -41,7 +41,7 @@ show_all_link: '展开'
 # 数学公式
 mathjax: false
 # 是否在新窗口打开链接
-open_in_new: false
+open_in_new: true
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏

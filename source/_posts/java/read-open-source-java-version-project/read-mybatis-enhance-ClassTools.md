@@ -2,11 +2,13 @@
 title: mybatis-enhance 的 ClassTools
 date: 2019-01-12 14:58:16
 categories:
-- Java
 - 读开源项目
+- Java
+- mybatis-enhance
 tags:
 - mybatis
 - 开源项目
+- mybatis-enhance
 ---
 
 # 前言
@@ -17,13 +19,10 @@ tags:
 
 # 分析
 
-<br>
-
 ## getClasses方法
 
 ```java
 public static Set<Class<?>> getClasses(String pack){
-
 	// 第一个class类的集合
 	Set<Class<?>> classes = new LinkedHashSet<Class<?>>();
 	// 是否循环迭代
