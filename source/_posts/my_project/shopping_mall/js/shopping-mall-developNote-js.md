@@ -1,9 +1,10 @@
 ---
-title: 商城开发笔记-js篇
+title: 商城开发笔记-js配置
 date: 2018-12-10 20:04:06
 categories:
 - 开发笔记
 - 商城
+- 前端篇
 tags:
 - 商城开发
 - js

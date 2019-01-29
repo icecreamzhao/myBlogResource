@@ -56,8 +56,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 2
-  order_by: 
-    date: -1
+  order_by: date
   
 # Category & Tag
 default_category: uncategorized
@@ -76,6 +75,9 @@ category_map:
     软件整理: software-sorting
     编程: coding
     C程序设计语言: c-programming-language
+    技巧篇: tips
+    配置篇: config
+    前端篇: front
     
 tag_map:
     hexo起步: hexo-firstStep

@@ -3,6 +3,7 @@ title: 商城开发笔记-根据实体类自动建表
 categories:
   - 开发笔记
   - 商城
+  - 配置篇
 tags:
   - 商城开发
 ---
@@ -12,7 +13,7 @@ tags:
 我们在 [商城开发笔记-pojo,dao,interface,service的依赖](/my_project/shopping_mall/Dependence_and_configuration/Shopping-mall-developNote-pojo-dao-interface-service-depend.html) 和 [商城开发笔记-service的配置](/my_project/shopping_mall/Dependence_and_configuration/Shopping-mall-developNote-service-config.html) 讨论过这个项目的pojo, dao, interface和service的依赖, 我们使用的是mybatis提供的`mybatis-generator`插件, 来生成实体类和mapper, 但是如果添加或者修改表结构的话, 就得使用sql来直接修改。 hibernate可以根据实体类来创建或者修改表, 那么我们今天要使用另一个插件, `ACTable`来让mybatis也支持这个功能。
 
 这个插件我在 [读mybatis-enhance开源项目](/categories/read-open-source/Java/mybatis-enhance/) 这个分类中详细介绍过, 对这个插件感兴趣的话可以移步。
-
+<!--more-->
 ## 添加依赖
 
 首先我们需要在`parent`模块中将这个依赖添加进来:
