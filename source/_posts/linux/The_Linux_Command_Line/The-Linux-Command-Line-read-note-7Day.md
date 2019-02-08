@@ -18,6 +18,7 @@ tags:
 [第六天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-6Day.html)
 
 # 总结
+今天学习了文件权限的意义, 如何修改文件权限, 修改掩码值以及如何添加用户和用户组。
 <!--more-->
 # 身份信息
 
@@ -122,4 +123,87 @@ chmod +r+x foo.txt
 
 ```shell
 chmod go=rw foo.txt
+```
+
+## 修改默认权限
+
+使用 `umask` 命令修改默认权限(掩码值), 比如:
+
+```shell
+umask 0022
+> foo.txt
+ls -l
+```
+
+此时, foo.txt的权限为`rw-r-r`。
+`umask`使用八进制表示权限
+0022表示`000 000 010 010`, 出现1的位置, 删除原来的权限, 0则保留。
+
+# 更改身份
+
+## su命令
+
+可以指定用户运行一个shell
+
+```shell
+su -
+```
+如果不指定用户名, 则默认是超级用户, 输入好超级用户的密码之后就可以以超级用户身份下运行shell了, 退出输入`exit`
+
+也可以只使用超级用户身份运行一行命令:
+```shell
+su -c 'command'
+```
+
+## sudo命令
+
+sudo和su命令的差异:
+
+1. 管理员可以配置sudo命令
+2. sudo命令需要的密码是当前用户的密码, 而su命令是管理员的密码
+
+# 更改文件所有者和用户组
+
+语法:
+
+```shell
+chown [ower][:[group]] file
+```
+
+| 参数 | 结果 |
+| --: | :-- |
+| bob | 更改文件拥有者为bob |
+| bob:users | 更改文件拥有者为bob, 文件用户组为users |
+| :admins | 文件用户组更改为admins, 拥有者不变 |
+| bob: | 文件拥有者为bob, 用户组改为bob所在的用户组 |
+
+chgrp
+
+> 在旧版的unix系统中, chown不能更改用户组所有权, 可以使用chgrp命令来更改用户组所有权
+
+# 添加一个用户
+
+```shell
+mkdir /home/bill
+adduser -d /home/bill bill
+passwd bill
+# 或者
+useradd bill
+passwd bill
+```
+
+添加一个名为bill的用户并为bill设置密码
+
+# 添加一个用户组
+
+```shell
+groupadd test
+```
+
+添加一个名为test用户组
+
+# 将已有的用户放到其他用户组
+
+```shell
+useradd -G [groupname] [username]
 ```
