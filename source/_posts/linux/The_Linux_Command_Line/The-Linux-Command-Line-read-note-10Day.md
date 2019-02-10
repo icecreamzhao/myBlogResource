@@ -10,6 +10,16 @@ tags:
 - linux
 ---
 
+[第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
+[第二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
+[第三天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)
+[第四天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)
+[第五天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-5Day.html)
+[第六天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-6Day.html)
+[第七天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-7Day.html)
+[第八天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-8Day.html)
+[第九天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-9Day.html)
+
 # 总结
 
 今天主要学习了vim的一些快捷操作。
