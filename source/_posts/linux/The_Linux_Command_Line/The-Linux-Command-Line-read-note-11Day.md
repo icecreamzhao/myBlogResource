@@ -1,13 +1,13 @@
 ---
-title: 快乐的linux命令行笔记-第十一天
+title: 快乐的Linux命令行笔记-第十一天
 date: 2019-02-14 21:49:02
 categories:
 - 读书笔记
-- 快乐的linux命令行
+- 快乐的Linux命令行
 tags:
 - 笔记
-- 快乐的linux命令行
 - linux
+- 快乐的Linux命令行
 ---
 
 [第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
