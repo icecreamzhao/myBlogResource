@@ -79,6 +79,7 @@ category_map:
     配置篇: config
     前端篇: front
     一些想法: a-little-thought
+    虚拟机: virual-machine
     
 tag_map:
     hexo起步: hexo-firstStep
@@ -97,6 +98,7 @@ tag_map:
     笔记: read_note
     想法: thought
     启发: enlighten
+    虚拟机: virual-machine
     
 
 # Date / Time format
