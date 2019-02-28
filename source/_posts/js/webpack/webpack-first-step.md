@@ -13,6 +13,9 @@ tags:
 
 从今天开始, 我要学习前端, 我觉得webpack应该是必经之路, 所以做一下笔记。
 <!--more-->
+
+转自[入门Webpack, 看这篇就够了](https://www.jianshu.com/p/42e11515c10f)
+
 # webpack
 
 先来简单的介绍一下webpack, 把项目当作整体, 通过一个给定的文件找到项目的所有依赖文件, 使用loaders处理他们, 最后打包为一个(或多个)浏览器可识别的JavaScript文件。
@@ -57,4 +60,27 @@ npm install --save-dev webpack
 </html>
 ```
 
-接下来在`Greeter.js`文件中, 
+接下来在`Greeter.js`文件中编写代码, 定义一个返回问候信息的html元素的函数, 并依据CommonJS规范到处这个函数为一个模块:
+
+```js
+// Greeter.js
+module.exports = function() {
+    var greet = document.createElement('div');
+    greet.textContent = "Hi there and greetings!";
+    return greet;
+}
+```
+
+## 使用
+
+最后再使用`webpack`命令来对js代码进行编译:
+
+```shell
+webpack app/main.js /public/bundle.js
+
+# 如果非全局安装则需要指定其在`node_modules`中的地址:
+
+node_modules/.bin/webpack app/main.js /public/bundle.js
+```
+
+
