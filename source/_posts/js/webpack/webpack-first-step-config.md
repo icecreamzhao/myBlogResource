@@ -12,6 +12,7 @@ tags:
 
 接着[上一篇](/js/webpack/webpack-first-step.html), 这一篇要来学习一下Webpack的配置。
 
+<!--more-->
 # 通过配置文件来使用Webpack
 
 ## 配置打包文件路径和文件名
