@@ -13,7 +13,7 @@ tags:
 [上一篇](/js/webpack/webpack-dev-server.html)介绍了如何设置本地服务器, 那么本篇来介绍如何配置loaders和babel
 
 webpack通过使用不同的loaders, 调用外部的脚本或工具, 实现对不同格式的文件的处理, 比如分析转换scss为css, 或者把ES6, ES7文件转换为现代浏览器兼容的JS文件, 合适的loader还可以将react中用到的JSX文件转换为JS文件。
-
+<!--more-->
 # 安装
 
 这里由于`webpack3.*/webpack2.*`已经内置可处理JSON文件, 所以无需添加处理JSON的loader, 这里直接配置就好。
@@ -88,9 +88,39 @@ module.exports = {
                             "env", "react"
                         ] 
                     }
-                }
+                },
+                exclude: /node_modules/
             }
         ]
     }
 }
 ```
+
+现在使用`npm run server`命令来运行server
+上面配置了Babel的loader, 那么现在我们的webpack项目已经可以使用ES6以及JSX的语法了, 接下来我们使用react语法来测试一下。但是我们首先要安装react和react-DOM。
+
+```shell
+npm install --save react react-dom
+```
+
+接下来更改Greeter.js, 让它返回一个react组件:
+
+```js
+// Greeter.js
+import React, {component} from 'react'
+import config from './config.json'
+
+class Greeter extends Component {
+    reader() {
+        return (
+            <div>
+                {config.greetText}
+            </div>
+        );
+    }
+}
+
+export default Greeter
+```
+
+
