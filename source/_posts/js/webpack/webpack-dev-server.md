@@ -10,7 +10,7 @@ tags:
 
 # 前言
 
-之前讨论了如何配置基本的webpack配置文件, 并且设置source-map。
+[上一篇](/js/webpack/webpack-source-map.html)讨论了如何配置基本的webpack配置文件, 并且设置source-map。
 今天来看看如何设置webpack-dev-server。
 <!--more-->
 # 安装

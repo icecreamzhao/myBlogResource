@@ -96,7 +96,8 @@ module.exports = {
 }
 ```
 
-现在使用`npm run server`命令来运行server
+现在使用`npm run server`命令来运行server, 此时可以看到浏览器已经把config.json中的内容展示出来了。
+
 上面配置了Babel的loader, 那么现在我们的webpack项目已经可以使用ES6以及JSX的语法了, 接下来我们使用react语法来测试一下。但是我们首先要安装react和react-DOM。
 
 ```shell
@@ -123,4 +124,59 @@ class Greeter extends Component {
 export default Greeter
 ```
 
+接着修改main.js:
 
+```js
+import react from 'react'
+import {render} from 'react-dom'
+import Greeter from './Greeter'
+
+render(<Greeter />, document.getElementById('root'));
+```
+
+修改完之后使用`npm start`重新打包, 并运行server来查看运行结果。
+
+
+# Babel 单独配置
+
+Babel的配置可以单独放到另外一个文件中, 如果都放到`webpack.config.js`文件中会显得很复杂。
+
+```js
+module.exports = {
+    // 入口文件
+    enrty: __dirname + "/app/main.js",
+    output: {
+        // 打包后文件存在的地方
+        path: __dirname + "/public",
+        // 打包后输出文件的文件名
+        filename: "bundle.js"
+    },
+    devtool: 'eval-source-map',
+    devServer: {
+        // 本地服务器所加载的页面所在的目录
+        contentBase: "./public",
+        host: "0.0.0.0",
+        inline: true
+    },
+    module: {
+        rules: [
+            {
+                test: /(\.jsx|\.js)$/,
+                use: {
+                    loader: "babel-loader"
+                },
+                exclude: /node_modules/
+            }
+        ]
+    }
+}
+```
+
+webpack会自动调用.babelrc里的配置选项:
+
+```js
+// .babelrc
+{
+    "presets": ["react", "env"]
+}
+```
