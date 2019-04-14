@@ -1,5 +1,5 @@
 ---
-title: 快乐的Linux命令行笔记-第四天
+title: 快乐的Linux命令行笔记-重定向标准输入和输出以及处理查询结果
 date: 2018-12-02 11:43:17
 categories:
 - 读书笔记
@@ -10,7 +10,8 @@ tags:
 - linux
 ---
 
-[第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)<br>[第二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)<br>[第三天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)<br>
+
+[第一天的笔记-基本的命令和使用方法](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)<br>[第二天的笔记-操作文件](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)<br>[第三天的笔记-查阅命令文档并创建命令别名](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)<br>
 
 # 总结
 

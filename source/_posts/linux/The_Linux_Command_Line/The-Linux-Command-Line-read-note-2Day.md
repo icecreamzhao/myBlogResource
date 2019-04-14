@@ -1,5 +1,5 @@
 ---
-title: 快乐的Linux命令行笔记-第二天
+title: 快乐的Linux命令行笔记-操作文件
 date: 2018-11-21 14:05:06
 categories:
 - 读书笔记
@@ -10,7 +10,7 @@ tags:
 - linux
 ---
 
-[第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)<br>
+[第一天的笔记-基本的命令和使用方法](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)<br>
 
 # 总结
 
