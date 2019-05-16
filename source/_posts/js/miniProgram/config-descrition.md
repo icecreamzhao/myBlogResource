@@ -3,9 +3,9 @@ title: 微信小程序的配置介绍
 date: 2019-03-24 09:26:32
 categories:
 - js
-- miniProgram
+- 小程序
 tags:
-- miniProgram
+- 小程序
 ---
 
 # 总结

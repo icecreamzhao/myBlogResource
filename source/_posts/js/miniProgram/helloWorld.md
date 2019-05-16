@@ -3,9 +3,9 @@ title: 编写一个helloWorld小程序
 date: 2019-03-24 11:20:19
 categories:
 - js
-- miniProgram
+- 小程序
 tags:
-- miniProgram
+- 小程序
 ---
 
 # 总结
@@ -28,3 +28,5 @@ tags:
 在根目录下创建一个文件夹, 装我们的helloWorld的页面所需要的所有的文件。
 
 ![文件夹结构](/images/js/miniProgram/miniProgram-1.jpg)
+
+

@@ -3,9 +3,9 @@ title: 微信小程序的目录结构以及各个文件的用处
 date: 2019-03-24 09:02:08
 categories:
 - js
-- miniProgram
+- 小程序
 tags:
-- miniProgram
+- 小程序
 ---
 
 # 总结
