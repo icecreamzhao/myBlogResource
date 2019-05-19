@@ -68,3 +68,5 @@ sh mqbroker -n 127.0.0.1:9876 autoCreateTopicEnable=true -c ../conf/broker.conf
 ```
 
 这样就可以正常的使用了。
+
+[这里](https://blog.csdn.net/gwd1154978352/article/details/80829534)是它的一些常用命令。

@@ -1,5 +1,5 @@
 ---
-title: first-question
+title: two sum
 date: 2019-03-17 23:50:38
 categories:
 - leetcode
