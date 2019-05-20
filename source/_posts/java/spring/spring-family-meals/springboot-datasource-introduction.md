@@ -10,10 +10,16 @@ tags:
 - spring
 ---
 
+# 前言
+
+本编博客介绍了两个SpringBoot的数据源。
+
 SpringBoot各个版本使用的数据源:
 
 * 1.0 使用的是tomcat的dataSource
 * 2.0 使用的是HikariCP
+
+<!--more-->
 
 # HikariCP
 
