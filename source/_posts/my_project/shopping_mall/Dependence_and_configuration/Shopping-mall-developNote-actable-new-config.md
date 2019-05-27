@@ -33,7 +33,9 @@ dependencyManagement部分:
     <version>${mybatis.actable.version}</version>
 </dependency>
 ```
+
 最后我们需要在dao, pojo和service模块中都加入这个依赖:
+
 ```xml
 <dependency>
     <groupId>com.gitee.sunchenbin.mybatis.actable</groupId>
@@ -45,10 +47,10 @@ dependencyManagement部分:
 
 其实人家在 [码云](http://git.oschina.net/sunchenbin/mybatis-enhance) 的项目介绍中就已经将配置说的很清楚了, 那么接下来我来根据我们这个项目来聊一下具体的配置。
 
-
 ## 实体类配置
 
 例子:
+
 ```java
 @Table(name = "MyTable")
 public class MyTable implements Serializable {
@@ -61,6 +63,7 @@ public class MyTable implements Serializable {
   /********get set 方法就不写了*******/
 }
 ```
+
 其实很简单, 一看就可以看明白, 在实体类顶部需要声明`@Table`注解, 指定表名。
 在字段顶部声明`@Column`注解, 指定各种属性。
 
@@ -73,15 +76,18 @@ public class MyTable implements Serializable {
 3. 当mybatis.table.auto=none时，系统不做任何处理。
 
 可以使用配置文件来进行设置(autoCreateTable.properties):
+
 ```properties
 mybatis.table.auto=update
 mybatis.model.pack=配置用于实体类的包名
 ```
+
 ## xml配置
 
 我们这个项目的数据库配置文件是service模块的`application-dao.xml`, 所以直接修改这个文件就可以了。
 
 OK, 下面是原来的配置文件:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -121,6 +127,7 @@ OK, 下面是原来的配置文件:
 ```
 
 我们这里先将刚才设置模式的配置文件引入进来:
+
 ```xml
 <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
     <property name="locations">
@@ -134,7 +141,9 @@ OK, 下面是原来的配置文件:
     <property name="properties" ref="configProperties" />
 </bean>
 ```
+
 原先的配置使用了简写的形式, 和下面的写法是等价的:
+
 ```xml
 <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
     <property name="location" value="classpath*:conf-descriptor.properties"/>
@@ -144,11 +153,13 @@ OK, 下面是原来的配置文件:
 </bean>
 ```
 简写的形式也可以配置多个文件, 使用逗号分隔, 像这样:
+
 ```xml
 <context:property-placeholder location="classpath:conf/db.properties, classpath*:conf/autoCreateTable.properties" />
 ```
 
 mybatis的的sqlSessionFactory的配置也需要改一下:
+
 ```xml
 <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
     <property name="dataSource" ref="dataSource" />
@@ -161,12 +172,16 @@ mybatis的的sqlSessionFactory的配置也需要改一下:
     </property>
     <property name="typeAliasesPackage" value="com.littleboy.pojo.*" />
 </bean>
+
 ```
 和原来比只多加了一行, 最后是mapper扫描器, 需要在basePackage属性中将这个插件的dao的包路径也添加进来。
+
 ```xml
 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     <property name="basePackage"
-              value="com.gitee.sunchenbin.mybatis.actable.dao.*;com.littleboy.dao.*" />
+              value="com.gitee.sunchenbin.mybatis.actable.dao.*;com.littleboy.dao" />
     <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 </bean>
 ```
+
+** 注意, 这里在配置MapperScannerConfigurer时, 要注意路径, actable工具的路径需要加入 `*`, 而我们自己的路径则不需要加 **, 因为它的包路径, dao下面还有其他的包, 所以需要加入星号来扫描, 而我们所有的类都放在dao包下, 如果加入星号会报找不到的错误。

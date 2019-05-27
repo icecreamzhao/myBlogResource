@@ -1,5 +1,5 @@
 ---
-title: 快乐的Linux命令行笔记-第一天
+title: 快乐的Linux命令行笔记-基本的命令和使用方法
 date: 2018-11-19 13:15:35
 categories:
 - 读书笔记

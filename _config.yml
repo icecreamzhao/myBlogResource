@@ -62,10 +62,10 @@ index_generator:
 default_category: uncategorized
 category_map:
     读书笔记: reading_note
+    运维: operation_and_maintenance
     开发笔记: develop_note
     快乐的Linux命令行: The_Linux_Command_Line
     linux的一些基本操作: Linux_Basic_Operation
-    自己的一些项目: my_project
     商城: shopping_mall
     操作系统: computer-operation
     基础知识: computer-base
@@ -78,7 +78,13 @@ category_map:
     技巧篇: tips
     配置篇: config
     前端篇: front
+    功能篇: function
     一些想法: a-little-thought
+    虚拟机: virual-machine
+    微信小程序: miniProgram
+    基础: based
+    学习: learn
+    踩坑: pit
     
 tag_map:
     hexo起步: hexo-firstStep
@@ -97,6 +103,10 @@ tag_map:
     笔记: read_note
     想法: thought
     启发: enlighten
+    虚拟机: virual-machine 
+    微信小程序: miniProgram
+    基础: based
+    踩坑: pit
     
 
 # Date / Time format
@@ -147,4 +157,4 @@ jsonContent:
       permalink: false
       excerpt: false
       categories: true
-      tags: true
+      tags: false

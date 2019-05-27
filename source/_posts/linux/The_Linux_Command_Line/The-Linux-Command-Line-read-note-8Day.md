@@ -1,5 +1,5 @@
 ---
-title: 快乐的Linux命令行笔记-第八天
+title: 快乐的Linux命令行笔记-进程
 date: 2019-02-06 22:11:47
 categories:
 - 读书笔记
@@ -9,13 +9,14 @@ tags:
 - 快乐的Linux命令行
 - linux
 ---
-[第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
-[第二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
-[第三天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)
-[第四天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)
-[第五天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-5Day.html)
-[第六天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-6Day.html)
-[第七天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-7Day.html)
+
+[第一天的笔记-基本的命令和使用方法](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
+[第二天的笔记-操作文件](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
+[第三天的笔记-查阅命令文档并创建命令别名](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)
+[第四天的笔记-重定向标准输入和输出以及处理查询结果](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)
+[第五天的笔记-命令的展开](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-5Day.html)
+[第六天的笔记-快捷键](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-6Day.html)
+[第七天的笔记-文件权限](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-7Day.html)
 
 # 总结
 今天学习了如何查看进程, 将进程切换前后台, 向进程发送信号等。

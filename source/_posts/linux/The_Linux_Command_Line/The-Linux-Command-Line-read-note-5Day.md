@@ -1,5 +1,5 @@
 ---
-title: 快乐的Linux命令行笔记-第五天
+title: 快乐的Linux命令行笔记-命令的展开
 date: 2018-12-13 21:09:59
 categories:
 - 读书笔记
@@ -10,19 +10,15 @@ tags:
 - linux
 ---
 
-[第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
-[第二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
-[第三天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)
-[第四天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)
+[第一天的笔记-基本的命令和使用方法](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
+[第二天的笔记-操作文件](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
+[第三天的笔记-查阅命令文档并创建命令别名](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)
+[第四天的笔记-重定向标准输入和输出以及处理查询结果](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)
 
 # 总结
 
 今天主要学习了展开和引用, 明白了如何使用展开来更有效率的使用shell
-
 <!--more-->
-
-<br>
-
 # 打印
 
 ## 打印匹配通配符的路径

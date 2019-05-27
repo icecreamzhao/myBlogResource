@@ -1,5 +1,5 @@
 ---
-title: 快乐的Linux命令行笔记-第十四天
+title: 快乐的Linux命令行笔记-网络
 date: 2019-02-19 21:45:29
 categories:
 - 读书笔记
@@ -10,19 +10,19 @@ tags:
 - linux
 ---
 
-[第一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
-[第二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
-[第三天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)
-[第四天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)
-[第五天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-5Day.html)
-[第六天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-6Day.html)
-[第七天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-7Day.html)
-[第八天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-8Day.html)
-[第九天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-9Day.html)
-[第十天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-10Day.html)
-[第十一天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-11Day.html)
-[第十二天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-12Day.html)
-[第十三天的笔记](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-13Day.html)
+[第一天的笔记-基本的命令和使用方法](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
+[第二天的笔记-操作文件](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
+[第三天的笔记-查阅命令文档并创建命令别名](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-3Day.html)
+[第四天的笔记-重定向标准输入和输出以及处理查询结果](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-4Day.html)
+[第五天的笔记-命令的展开](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-5Day.html)
+[第六天的笔记-快捷键](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-6Day.html)
+[第七天的笔记-文件权限](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-7Day.html)
+[第八天的笔记-进程](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-8Day.html)
+[第九天的笔记-修改shell环境](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-9Day.html)
+[第十天的笔记-vim入门](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-10Day.html)
+[第十一天的笔记-自定义shell提示符](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-11Day.html)
+[第十二天的笔记-软件包管理系统](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-12Day.html)
+[第十三天的笔记-创建映像](/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-13Day.html)
 
 # 总结
 今天主要学习了linux如何检查网络情况, 使用ftp, ssh等工具传输文件, 使用ssh工具连接远端系统。
