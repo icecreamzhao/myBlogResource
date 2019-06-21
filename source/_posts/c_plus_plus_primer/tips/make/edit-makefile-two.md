@@ -35,9 +35,9 @@ tags:
 在上面的例子中, 先让我们看看 edit 的规则:
 
 ```
-edit : main.o kdb.o command.o display.o /
+edit : main.o kdb.o command.o display.o \
        insert.o search.o files.o utils.o
-	cc -o edit main.o kdb.o command.o display.o /
+	cc -o edit main.o kdb.o command.o display.o \
 	insert.o search.o files.o utils.o
 ```
 
@@ -46,7 +46,7 @@ edit : main.o kdb.o command.o display.o /
 我们可以声明一个`objects`来保存所有的 obj 文件:
 
 ```
-objects = main.o kdb.o command.o display.o /
+objects = main.o kdb.o command.o display.o \
           insert.o search.o files.o utils.o
 
 edit : $(objects)
@@ -86,7 +86,7 @@ GNU 的 make 很强大, 它可以自动推导文件以及文件依赖关系后�
 只要 make 看到一个`.o`文件, 他就会自动的把`.c`文件加在依赖关系中, 如果 make 找到一个 whatever.o, 那么 whatever.c 就会是 whatever.o 的依赖文件。并且 cc -c whatever.c 也会被推导出来, 于是 makefile 变成了这样:
 
 ```
-objects = main.o kdb.o command.o display.o /
+objects = main.o kdb.o command.o display.o \
           insert.o search.o files.o utils.o
 
 edit : $(objects)

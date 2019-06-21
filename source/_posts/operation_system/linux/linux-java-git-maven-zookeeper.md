@@ -31,7 +31,7 @@ $ mkdir java
 $ mv .jdk-8u191 /home/usr/java
 ```
 
-接下来设置环境变量, 这一篇详细讲解了[如何设置环境变量](/linux/Linux_Basic_Operation/linux-path-variable.html):
+接下来设置环境变量, 这一篇详细讲解了[如何设置环境变量](/operation_system/linux/linux-path-variable.html):
 
 ```shell
 $ export JAVA_HOME=/home/usr/java/jdk1.8.0_102

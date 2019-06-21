@@ -39,7 +39,7 @@ npm install -g vue-cli
 vue init webpack vue_demo
 ```
 
-来创建一个基于webpack的vue项目, 这样环境就初步搭建成功了。>
+来创建一个基于webpack的vue项目, 这样环境就初步搭建成功了。
 
 # Vue项目介绍与配置
 

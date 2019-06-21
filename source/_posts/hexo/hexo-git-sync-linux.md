@@ -14,7 +14,7 @@ tags:
 
 直到后来, 我通过一本书(这本书叫The Linux Command Line, 这里有它的[中文版](bill66.github.io/TLCL/index.html), 我还做了[读书笔记](https://icecreamzhao.github.io/linux/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html) )接触了Linux, 知道了vim, 就开始使用vim来写博客。
 
-一开始使用的是vim的windows版本, 这里是[我在windows上使用git同步博客遇到的一些问题](https://icecreamzhao.github.io/hexo/hexo-git-sync-windows.html), 但是因为vim的windows版本是运行在windows的命令行中的, 而windows命令行在键入中文的时候删除拼音总是删不干净, 会留下第一个字的第一个拼音, 所以索性直接在Linux中使用原汁原味的vim来写博客, 这篇博客就是在Linux下使用vim写成的。
+一开始使用的是vim的windows版本, 这里是[我在windows上使用git同步博客遇到的一些问题](/hexo/hexo-git-sync-windows.html), 但是因为vim的windows版本是运行在windows的命令行中的, 而windows命令行在键入中文的时候删除拼音总是删不干净, 会留下第一个字的第一个拼音, 所以索性直接在Linux中使用原汁原味的vim来写博客, 这篇博客就是在Linux下使用vim写成的。
 <!--more-->
 # 步骤
 
@@ -37,7 +37,7 @@ tags:
 
 * 配置python环境变量
 
-> 这里我就只说一下对当前用户有效的办法, 全局设置的话其实一样, 只是修改的文件不同, 详情[请看这里](https://icecreamzhao.github.io/linux/Linux_Basic_Operation/linux-path-variable.html)。 
+> 这里我就只说一下对当前用户有效的办法, 全局设置的话其实一样, 只是修改的文件不同, 详情[请看这里](/operation_system/linux/linux-path-variable.html)。 
 在 `home` 目录下, 在.bashrc文件中添加:
 
 ```shell

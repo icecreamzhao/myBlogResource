@@ -73,4 +73,76 @@ Makefile 文件中的特殊变量 "VPATH" 就是完成这个功能的， 如果�
 
 * `vpath <pattern>` 
 
-> 清除符合模式`<>`
+> 清除符合模式`<pattern>`的文件搜索目录
+
+* `vpath`
+
+> 清除所有已被设置好的文件搜索目录
+
+vpath 使用方法中的 `<pattern>` 需要包含 `%` 字符, 例如 `%.h` 表示了所有以 .h 结尾的文件。
+
+pattern 指定了要搜索的文件集, 而 directories 制定了 pattern 的文件集的搜索的目录, 比如:
+
+> vpath %.h ../headers
+
+该语句表示, 要求 make 在 "../headers" 目录下搜索所有以 .h 结尾的文件。(如果某文件在当前目录没有找到的话)
+
+我们可以连续地使用 vpath 语句, 以指定不同的搜索策略, 如果连续的 vpath 语句中出现了相同的 pattern, 或是被重复了的 pattern, 那么 make 会按照 vpath 语句的先后顺序来搜索。如:
+
+	vpath %.c foo
+	vpath % blish
+	vpath &.c bar
+
+> 表示 .c 结尾的文件, 先在 foo 目录, 然后是 blish, 最后是 bar 目录。
+
+	vpath %.c foo:bar
+	vpath % blish
+
+> 表示 .c 结尾的文件, 先在 foo 目录, 然后是 bar 目录, 最后是 blish 目录。
+
+# 五、伪目标
+
+最早先的例子中, 我们提到过一个 clean 的目标, 这是一个伪目标。
+
+	clean:
+		rm *.o temp
+
+正像我们前面例子中的 clean 一样, 既然我们生成了许多文件编译文件, 我们也应该提供一个清除他们的目标以备完整的重编译使用。
+
+因为我们并不生成 clean 文件, 它只是一个标签, 所以当我们需要使用它时需要显式的指定它来执行。这个标签不能和其他的目标文件重名, 当然, 为了避免这种情况, 可以使用 .PHONY 的文件来显式的指明他是一个伪目标, 这样, 不管是否有这个文件, 这个目标就是一个伪目标。
+
+	.PHONY clean
+
+伪目标一般没有依赖的文件, 但是我们也可以为伪目标指定所依赖的文件。伪目标同样可以作为"默认目标", 只要将其放在第一个。一个示例就是, 如果你的 Makefile 需要一口气生成若干可执行文件, 但你只想简单地敲一个 make 完事, 并且, 所有的目标文件都写在一个 Makefile 中, 那么你可以使用伪目标的不生成文件的特性:
+
+```
+all : prog1 prog2 prog3
+.PHONY : all
+prog1 : prog1.o utils.o
+	cc -o prog1 prog1.o utils.o
+
+prog2 : prog2.o
+	cc -o prog2 prog2.o
+
+prog3 : prog3.o sort.o utils.o
+	cc -o prog3 prog3.o sort.o utils.o
+```
+
+我们知道 Makefile 的第一个目标总是默认目标, 我们声明了一个 all 的伪目标, 其依赖于其他三个目标, 由于伪目标不生成文件, 所以总是会被执行。
+
+从上面的例子也可以看出, 目标也可以成为依赖, 所以伪目标也可以成为依赖, 看下面的例子:
+
+```
+.PHONY cleanall cleanobj cleandiff
+
+cleanall : cleanobj cleandiff
+	rm program
+
+cleanobj :
+	rm *.o
+
+cleandiff :
+	rm *.diff
+```
+
+这样我们可以通过输入 `make cleanall` 和 `make cleanobj` 还有 `make cleandiff` 来达到清除不同类型文件的目的。

@@ -12,31 +12,23 @@ tags:
 
 # 在Linux系统(CentOS)下搭建运行环境
 
-<br>
-
 ## 前言
 
-由于[这篇文章](/operation_system/deploy-system.html), 我尝试着把我的项目放到linux系统上运行试试看, 然后就有了这篇总结。
+由于[这篇文章](/operation_system/windows/deploy-system.html), 我尝试着把我的项目放到linux系统上运行试试看, 然后就有了这篇总结。
 
 <!--more-->
-
-<br>
 
 ## 准备
 
 * 一台已经装好linux系统的电脑
 
-嗯, 只需要这些, 具体装机的教程[看这里](/operation_system/deploy-system.html)。
-
-<br>
+嗯, 只需要这些, 具体装机的教程[看这里](/operation_system/windows/deploy-system.html)。
 
 ## 搭建环境
 
-具体的步骤[看这里](/linux/Linux_Basic_Operation/linux-java-git-maven-zookeeper.html)
+具体的步骤[看这里](/operation_system/linux/linux-java-git-maven-zookeeper.html)
 
 按照以上步骤我们就可以得到一台安装好java, maven, git以及zookeeper的linux系统的电脑了。
-
-<br>
 
 ## 启动项目
 
@@ -77,15 +69,11 @@ cd $service
 mvn tomcat7:run
 ```
 
-<br>
-
 ## 遇到的问题
 
 ### jdk解压缩的问题
 
-oracle官网的jdk压缩包解压不了,  [这篇文章](/linux/Linux_Basic_Operation/linux-java-git-maven-zookeeper.html)里有讲。
-
-<br>
+oracle官网的jdk压缩包解压不了,  [这篇文章](/operation_system/linux/linux-java-git-maven-zookeeper.html)里有讲。
 
 ### 启动项目不能访问的问题
 

@@ -26,11 +26,11 @@ Makefile 里主要包含了五个东西, 显式规则, 隐式规则, 变量定�
 
 <!--more-->
 
-# 二、Makefile 的文件名
+## 二、Makefile 的文件名
 
 默认的情况是, make 命令会在当前目录下按顺序寻找文件名为 "GNUmakefile", "makefile", "Makefile" 的文件。在这三个文件名中, 最好使用"Makefile" 这个文件名, 比较醒目好认。最好不要使用"GNUmakefile", 这个只有 GNU 的 make 识别。
 
-# 三、引用其他的 Makefile
+## 三、引用其他的 Makefile
 
 在 Makefile 使用 include 关键字可以把别的 Makefile 包含进来, 被包含进来的文件会原模原样的放在当前文件的包含位置。include 语法是:
 
@@ -61,13 +61,13 @@ make 命令开始时, 会找寻 include 所指出的其他的 Makefile, 并把�
 
 表示无论 include 中出现了什么错误, 都不要报错继续执行, 和其他版本 make 兼容的相关命令是 sinclude, 作用和这个一样。
 
-# 四、环境变量 MAKEFILES
+## 四、环境变量 MAKEFILES
 
 如果当前环境变量中定义了环境变量 MAKEFILES, 那么, make 会把这个变量中的值做一个类似于 include 的动作。这个变量中的值是其他的 Makefile, 用空格分隔。只是, 它和 include 不同的是, 从这个环境中引入的 Makefile 的目标不会起作用, 如果环境变量中定义的文件发现错误, make 也不会理。
 
 如果这个变量被定义, 那么所有的 makefile 都会被影响。提这件事只是想告诉大家, 也许有时候 Makefile 出了怪事, 那么可以看看当前环境变量中有没有定义这个变量。
 
-# 五、make 的工作方式
+## 五、make 的工作方式
 
 GNU 的 make 工作时的执行步骤如下:
 

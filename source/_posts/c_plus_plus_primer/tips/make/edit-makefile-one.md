@@ -12,7 +12,7 @@ tags:
 
 # 前言
 
-之前转载了一篇关于[Makefile](/c_plus_plus_primer/tips/edit-makefile.html)的文章, 但是总感觉还是有一些东西没有搞明白, 偶然间看到了陈浩大神的专栏, 其中就有[关于Makefile的一系列的文章](https://blog.csdn.net/haoel/article/details/2886), 遂决定对这一系列的文章进行摘抄。
+之前转载了一篇关于[Makefile](/c_plus_plus_primer/tips/make/edit-makefile.html)的文章, 但是总感觉还是有一些东西没有搞明白, 偶然间看到了陈浩大神的专栏, 其中就有[关于Makefile的一系列的文章](https://blog.csdn.net/haoel/article/details/2886), 遂决定对这一系列的文章进行摘抄。
 <!--more-->
 
 # 概述
