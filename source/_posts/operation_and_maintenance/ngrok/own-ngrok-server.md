@@ -2,7 +2,7 @@
 title: 搭建自己的ngrok服务器
 date: 2019-04-13 19:48:36
 categories:
-- 运维`
+- 运维
 - net
 - ngrok
 tags:
@@ -284,4 +284,4 @@ GOOS="" GOARCH="" go get github.com/jteeuwen/go-bindata/go-bindata
 
 客户端启动之后, 总是reconnecting
 
-解决办法: 配置一级域名@的解析, 配置上就好了
+解决办法: 配置一级域名@的解析, 配置上就好了。
