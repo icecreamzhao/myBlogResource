@@ -25,8 +25,6 @@ tags:
 * bootstrap-datepicker
 * summernote
 
-<br>
-
 ## 在Vue项目引用jQuery
 
 步骤如下:
@@ -60,7 +58,62 @@ tags:
 
 这样就可以直接使用`$`来进行对元素的操作了
 
-<br>
 
 ## 在Vue中引用js文件
 
+先说怎么操作:
+
+1. 在`build/webpack.base.conf.js`文件中的`module.exports`部分里面的`alias`里添加:
+```js
+module.exports = {
+	// ... 省略前面的代码
+	resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+		`apiTools`: resolve('src/api/tools.js')
+	}
+}
+
+// ...省略后面的代码
+```
+2. 在`main.js`里引用:
+```js
+import tools from 'apiTools'
+import tools2 from 'apiTools'
+```
+> 补充, apiTools.js内容是:
+```
+function tools () {
+  console.log('test')
+}
+
+function tools2() {
+	console.log('test2')
+}
+
+export default {
+  tools: tools(),
+  tools2: tools2()
+}
+```
+3. 调用js方法
+```
+export default {
+  name: 'App',
+  mounted() {
+    tools
+    tools2
+  }
+}
+</script>
+```
+
+大概就是这三步, 那么接下来解释一下:
+
+第一步, 设置别名, 如果接触过linux系统的话, 对别名应该比较熟悉。其实就是字符串替换, 比如上面的例子, 就是将`apiTools`替换成了后面的路径。
+第二步, 引用js文件, 这里import后面的是js文件暴露出的方法名(或者是变量名), from 后面的是前面约定好的替换的字符串。
+最后一步, 直接调用就可以。
+
+# 补充
+
+在配置字符串替换的时候, 可能有关键字的问题, 这个还不太确定, 所以在配置的时候尽量避免使用那些常用的字符串。
