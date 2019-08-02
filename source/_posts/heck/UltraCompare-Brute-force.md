@@ -1,5 +1,5 @@
 ---
-title: UltraCompare-Brute-force
+title: UltraCompare 文件对比软件暴力破解
 date: 2019-07-17 13:26:50
 categories:
 - 破解

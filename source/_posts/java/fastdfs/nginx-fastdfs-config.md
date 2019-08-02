@@ -361,12 +361,19 @@ user root;
 line 36: listen 9999;
 line 48:
 location /wheel/M00 {
-    root /home/littleboy/programmingTools/fastdfs/fastdfs_storage_dat    a/data;
+    root /home/littleboy/programmingTools/fastdfs/fastdfs_storage_data/data;
     ngx_fastdfs_module;
     proxy_connect_timeout 300;
     proxy_read_timeout 300;
     proxy_send_timeout 300;
 }
+```
+
+修改一下http.conf:
+
+```
+# 修改为已经存在的一个html或者图片之类的。
+http.anti_steal.token_check_fail=/home/fastdfs/anti-steal.jpg
 ```
 
 然后进入fastDFS安装时解压过的目录, 将http.conf和mime.types拷贝到/etc/fdfs目录下:
@@ -398,7 +405,7 @@ line40: tracker_server=192.168.1.3:22122
 line44: storage_server_port=23000
 line53: url_have_group_name = true
 line62: store_path0=/home/littleboy/programmingTools/fasdfs/fastdfs_storage_data
-line113: group_count = 3
+line113: group_count = 1
 
 # 在文件的最后设置group
 [group1]

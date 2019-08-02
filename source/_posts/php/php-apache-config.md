@@ -22,10 +22,8 @@ tags:
 <!--more-->
 
 ### Linux version
-[linux下的php下载地址](http://www.php.net/downloads.php)
+[linux下的php下载地址](https://www.php.net/releases/)
 同样, 使用tar解压就好
-
-<br>
 
 ## 下载apache服务器
 
@@ -38,13 +36,63 @@ tags:
 ### Linux version
 
 centos下可以直接使用`yum`命令来安装。
+
 ```cmd
 yum install httpd -y
 ```
+也可以下源码[地址](http://archive.apache.org/dist/httpd/)进行安装。
+
+[安装步骤](https://blog.csdn.net/nsh_chinaboy/article/details/79918065)
+
 安装完之后可以在`/etc/httpd`目录下找到。
 
+#### Linux 源码安装php
 
-<br>
+将源码下载解压好之后, 就可以
+
+```
+./configure --prefix=/usr/local/php --with-curl=/usr/local/curl --with-freetype-dir --with-gd --with-gettext --with-iconv-dir --with-kerberos --with-libdir=lib64 --with-libxml-dir=/usr/include/libxml2/libxml --with-openssl --with-pcre-regex --with-pdo-mysql --with-pdo-sqlite --with-pear --with-png-dir --with-xmlrpc --with-xsl --with-zlib --enable-fpm --enable-bcmath --enable-libxml --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-xml --enable-zip --with-apxs2=/data/soft/httpd/bin/apxs
+```
+
+注意, 这里`--prefix`说明了安装位置, 剩下的都是开启php的一些功能, 这里注意, 有一些功能需要安装其他的软件, 如果没有安装会报错, 大部分都是某某-devel没有安装, 可以直接使用`yum list`来查找安装。
+
+configure之后就可以直接make了, 这里我遇到的报错有:
+
+* 错误一:
+```
+node.c: In function ‘dom_canonicalization’:
+```
+
+是libxml导致的问题，可以下载补丁patch一下。
+
+```
+curl -o php-5.x.x.patch https://mail.gnome.org/archives/xml/2012-August/txtbgxGXAvz4N.txt
+patch -p0 -b < ./php-5.x.x.patch
+```
+或者：
+配置时去掉--with-libxml-dir 这个选项。但没有但没有DOM和XML。
+如果需要DOM和XML。则配置--with-libxml-dir=libxml2安装目录/include/libxml2/libxml
+
+[原博客地址](https://www.cnblogs.com/yangxunwu1992/p/5803392.html)
+
+* 错误二:
+```
+ext/mysqli/mysqli.c:1495: undefined reference to `client_errors'
+```
+
+去掉 `--with-mysqli` 这个选项，然后在安装完 PHP 之后再新增这个扩展。
+安装 mysqli 扩展，PHP 5.3 的源码就已经包含了这个扩展的源码，进入 php-5.3.29/ext/mysqli ，用 phpize 安装，又或者直接用 pecl 安装。
+
+使用 `/php/bin/phpize`运行php安装目录下的phpize文件，这时候会在extension目录下生成相应的configure文件。
+`.configure --with-php-config=/php/bin/php-config` 运行配置，如果你的服务器上只是装了一个版本的php则不需要添加`--with-php-config` 。后面的参数只是为了告诉phpize要建立基于哪个版本的扩展。
+
+`make && make install`编译安装模块。
+
+编译好模块之后，需要让php启用它。在php.ini文件中加入把extension.so开启即可。重启php服务。
+
+* 错误三:
+
+重新编译PHP后重启Apache出现undefined symbol: sapi_globals, PHP编译了中间文件，如果再用./configure --with-apxs2来编译php会导致apache重启的时候出现undefined symbol: sapi_globals的错误。解决办法是在configure之前运行一下make clean即可。
 
 # 配置
 
