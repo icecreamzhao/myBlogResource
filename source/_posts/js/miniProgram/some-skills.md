@@ -230,7 +230,7 @@ wxss:
 
 先来看看效果:
 
-![navigateBack](/images/js/miniprogram/navigateBack.gif)
+![navigateBack](/images/js/miniProgram/navigateBack.gif)
 
 第一个页面的js:
 
