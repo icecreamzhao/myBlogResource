@@ -18,8 +18,8 @@ tags:
 * 将溢出的文本用省略号代替
 * 特定区域滚动到顶部时固定
 * 微信小程序select下拉框实现
-* 微信小程序wx:for循环输出
-* flex布局
+* wx.navigateBack() 携带参数返回
+* 微信小程序 选择器picker的使用
 
 <!--more-->
 
@@ -225,3 +225,60 @@ wxss:
   padding: 0 10rpx;
 }
 ```
+
+# wx.navigateBack() 携带参数返回 
+
+先来看看效果:
+
+![navigateBack](/images/js/miniprogram/navigateBack.gif)
+
+第一个页面的js:
+
+```js
+data: {
+  // 获取上个页面返回的数值
+  prePageData: ''
+},
+
+toNextPage: function() {
+  wx.navigateTo({
+    url: '/pages/prePage/prePage',
+  })
+},
+```
+
+第一个页面的wxml:
+
+```html
+<view bindtap='toNextPage'>到下个页面</view>
+<view>上个页面的东西: {{prePageData}}</view>
+```
+
+第二个页面的js:
+
+```js
+returnToPrePage: function() {
+  // 获取页面栈
+  var pages = getCurrentPages();
+  // 获取上个页面的实例
+  var prePage = pages[pages.length - 2];
+
+  prePage.setData({
+    prePageData: 'hahaha'
+  })
+
+  wx.navigateBack({
+    delta: 1
+  })
+}
+```
+
+第二个页面的wxml:
+
+```html
+<view bindtap='returnToPrePage'>返回上个页面</view>
+```
+
+# 微信小程序 选择器picker的使用
+
+
