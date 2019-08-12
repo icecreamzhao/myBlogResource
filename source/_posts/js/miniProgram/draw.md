@@ -3,9 +3,9 @@ title: 关于微信小程序的canvas
 date: 2019-06-09 10:45:14
 categories:
 - js
-- 小程序
+- 微信小程序
 tags:
-- 小程序
+- 微信小程序
 - canvas
 ---
 

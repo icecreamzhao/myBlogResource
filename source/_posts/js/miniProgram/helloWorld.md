@@ -3,9 +3,9 @@ title: 编写一个helloWorld小程序
 date: 2019-03-24 11:20:19
 categories:
 - js
-- 小程序
+- 微信小程序
 tags:
-- 小程序
+- 微信小程序
 ---
 
 # 总结
