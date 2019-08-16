@@ -71,18 +71,27 @@ npm rebuild node-sass
 
 这个方法, 他就会根据Linux环境下载合适的版本。
 
+**注意! 我在node的新版本上使用这个命令会报错! 所以, 没事别瞎升级node版本...**
+
 * System limit for number of file watchers reached 错误
 
 遇到这个错误, 是因为系统对文件监控的数量达到默认的限制了, 可以修改系统文件, 增加对文件监控的数量。
 
-因为我这边使用的Linux发行版是CentOS, 所以只有CentOS的解决方案:
+CentOS的解决方案:
 在CentOS 7之前, 修改系统内核参数, 修改的是 `/etc/sysctl.conf` 文件, 而7之后, 则是修改 `/usr/lib/sysctl.d/00-system.conf`
+
+debian的解决方案:
+修改 `/etc/sysctl.conf` 文件。
 
 ```shell
 fs.inotify.max_user_watches=524288
 ```
 
 修改好之后重启系统, 就可以生效了。
+
+* "use strict: not found" 的问题
+
+这个问题我只在debian系统下遇到了, 由于我之前调用hexo命令的时候使用的是 `sh hexo`, 使用的是shell的方式调用的, 但是不知道debian和centos哪里不一样, debian可以直接使用hexo, 所以在调用的时候就可以直接去掉sh。
 
 # 总结
 

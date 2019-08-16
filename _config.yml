@@ -92,6 +92,7 @@ category_map:
     破解: heck
     加密: encode
     开发: develop
+    工具: tools
     
 tag_map:
     hexo起步: hexo-firstStep

@@ -1,9 +1,9 @@
 #!/bin/bash
-HEXO="/home/littleboy/myProject/myBlogResource/node_modules/hexo/node_modules/.bin"
+HEXO="/home/pi/myProject/myBlogResource/node_modules/hexo/node_modules/.bin"
 
-MYBLOG="/home/littleboy/myProject/myBlogResource"
+MYBLOG="/home/pi/myProject/myBlogResource"
 
-hexo="sh $HEXO/hexo"
+hexo="$HEXO/hexo"
 
 cd $MYBLOG
 $hexo clean

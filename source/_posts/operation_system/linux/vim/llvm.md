@@ -93,6 +93,26 @@ filetype plugin indent on    " required
 
 打开vim, 运行`:PluginInstall`命令来自动安装插件。
 
+**注意, 这里如果不能翻墙的话, 建议还是使用git安装!!!**
+
+> 感谢写[这篇博客](https://www.cnblogs.com/YMaster/p/11209813.html)的老铁, 非常感谢!
+
+git安装方式如下:
+
+```shell
+cd ~/.vim/bundle
+git clone https://github.com/ycm-core/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
+# 这里安装子模块会出现
+# fatal: unable to access 'https://go.googlesource.com/tools/': Failed to connect to go.googlesource.com port 443: 连接超时
+# 解决办法:
+cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/go/src/golang.org/x
+git clone https://github.com/golang/tools.git
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+```
+
 ![llvm](/images/linux/computer-operation/llvm.jpg)
 
 我在安装完之后, 再次打开vim, 提示我vim版本低, 最低版本为7.4.143, 好了, 这就是我遇到的第一个坑。
@@ -204,8 +224,16 @@ YCM的vim插件已经安装好了, 接下来安装clang和llvm。
 
 安装svn, 用于下载llvm的源码
 
+centos:
+
 ```shell
 yum install svn -y
+```
+
+debian:
+
+```shell
+sudo apt-get install subversion
 ```
 
 下载llvm源码
@@ -213,7 +241,7 @@ yum install svn -y
 ```shell
 mkdir llvm_source_build
 cd llvm_source_build
-co http://llvm.org/svn/llvm-project/llvm/trunk llvm
+svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm
 ```
 
 下载clang源码
@@ -275,8 +303,29 @@ tar xvf cmake-3.6.2.tar.gz && cd cmake-3.6.2/
 
 #### 编译安装
 
+注意: 这里如果是debian系统, 是没有gmake的, 那么接下来需要这些操作:
+
+这里参考了[这篇帖子](http://cmake.3232098.n2.nabble.com/v3-7-0-archive-cryptor-private-h-compile-error-td7594660.html#a7594664)。
+
 ```shell
-./bootstrap
+mkdir build
+cd build
+sudo apt-get install librhash-dev
+sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install libbz2-dev
+sudo apt-get install liblzma-dev
+sudo apt-get install libarchive-dev
+sudo apt-get install libjsoncpp-dev
+../bootstrap --system-libs
+make
+make install
+```
+
+> centos 版本的操作:
+```shell
+mkdir build
+cd build
+../bootstrap
 gmake
 gmake install
 ```
@@ -377,7 +426,7 @@ vim /etc/profile
 export PATH=$PATH:/opt/llvm/bin
 ```
 
-这里我整整编译了一晚上才编译好, 期间遇到了 `- version GLIBCXX_3.4.20' not found` 的问题, 就是gcc的版本太低, 或者是和配置的gcc的版本不一致, 以下是我参考的所有的博客和文档。
+这里我整整编译了一晚上才编译好, 期间遇到了 `- version GLIBCXX_3.4.20' not found` 的问题, 就是gcc的版本太低, 或者是和配置的gcc的版本不一致。
 
 ### 编译ycm_core
 
@@ -405,6 +454,12 @@ cmake --build . --target ycm_core --config Release
 ```shell
  cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/
 ```
+
+# 配置 ycm 的补全库
+
+
+
+# 以下是我参考的所有博客和帖子:
 
 [【vim】插件管理及代码智能提示与补全环境的配置](https://www.cnblogs.com/zzqcn/p/4660615.html)
 [CentOS 7 + vim + ycm (clang) + NERDTree](https://www.zybuluo.com/searcher2xiao/note/136156)
