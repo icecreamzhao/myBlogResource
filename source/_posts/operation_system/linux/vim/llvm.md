@@ -438,7 +438,13 @@ export PATH=$PATH:/opt/llvm/bin
 mkdir ycm_build
 cd ycm_build
 # 这里PATH_TO_LLVM_ROOT的路径应该是你的llvm的build的路径
-cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=~/ycm_temp/llvm_root_dir ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=~/ycm_temp/llvm_root_dir . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+```
+
+这里我遇到了无法找到Boost路径的问题, 直接安装一下就好了:
+
+```shell
+sudo apt-get install libboost-all-dev
 ```
 
 编译makefile
@@ -457,6 +463,15 @@ cmake --build . --target ycm_core --config Release
 
 # 配置 ycm 的补全库
 
+编写vimrc中指定的.ycm_extra_conf.py, 添加需要显示的库:
+
+```
+flags = [
+`-isystem`,
+`/usr/include/c++/8`
+]
+```
+`-isystem`代表自己添加的库。
 
 
 # 以下是我参考的所有博客和帖子:
