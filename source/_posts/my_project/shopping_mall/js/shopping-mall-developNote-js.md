@@ -42,8 +42,7 @@ tags:
   ```js
   plugins: [
       new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery'
+          $: 'jquery'
       })
   ]
   ```
@@ -54,10 +53,82 @@ tags:
 
   ```js
   import $ from 'jquery'
+
+  Vue.prototype.$ = $
   ```
 
-这样就可以直接使用`$`来进行对元素的操作了
+这样就可以直接使用`this.$`来进行对元素的操作了。
 
+## 使用 BootstrapVue
+
+首先安装:
+
+```js
+npm install vue bootstrap-vue bootstrap --save-dev
+```
+
+接着在 main.js 中声明 bootstrap-vue:
+
+```js
+import '~/bootstrap/dist/css/bootstrap.css'
+import '~/bootstrap-vue/dist/bootstrap-vue.css'
+import BootstrapVue from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
+```
+
+这样就可以直接使用 bootstrap 的组件了。关于组件的详细信息可以查看[官网](https://bootstrap-vue.js.org)。
+
+## 在 Vue 中使用 jquery.metisMenu 和 jquery.slimscroll
+
+同样的, 首先安装:
+
+```js
+npm install --save metismenu jquery-slimscroll
+```
+
+在 main.js 中使用 `require` 来加载 metisMenu 和 slimscoroll:
+
+```js
+require('metismenu')
+require('jquery-slimscroll')
+```
+
+关于 import 和 require 的区别, 请查看[import和require的区别](https://www.cnblogs.com/sunshq/p/7922182.html)。
+
+之后就可以直接使用了, 关于 metisMenu 的使用方法请查看[官网](https://mm.onokumus.com/index.html)。
+
+## 使用 bootstrap-datepicker
+
+这个和之前的步骤不太一样。首先到[官网](https://github.com/uxsolutions/bootstrap-datepicker/releases)将最新的版本下载下来, 然后将 css 和 js 两个文件夹放置项目的静态文件目录, 假定为 `/src/static`文件夹下。
+
+之后在 `main.js` 中引入文件:
+
+```js
+import '../static/css/bootstrap-datepicker.css'
+import '../static/js/bootstrap-datepicker.js'
+```
+
+就可以了。
+
+## 在 vue 中使用 summernote
+
+首先安装:
+
+```js
+npm install --save codemirror font-awesome moment popper.js summernote tooltip.js
+```
+
+安装好之后在 main.js 中引入:
+
+```js
+require('popper.js')
+require('tooltip.js')
+require('bootstrap')
+require('summernote')
+```
+
+大功告成! 
 
 ## 在Vue中引用js文件
 
