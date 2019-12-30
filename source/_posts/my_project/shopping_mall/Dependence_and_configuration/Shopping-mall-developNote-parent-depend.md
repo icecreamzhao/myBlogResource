@@ -11,7 +11,7 @@ tags:
 
 # 框架简介
 
-​    本项目主要用到的框架有:
+本项目主要用到的框架有:
 
 1. Spring
 2. SpringMVC
@@ -49,7 +49,12 @@ tags:
   <version>0.1</version>
   
   <!-- 主体内容 -->
-  
+
+  <modules>
+      <module>../common</module>
+	  <module>../manager</module>
+	  <module>../web</module>
+  </modules>
 </project>
 ```
 
@@ -132,52 +137,52 @@ tags:
 
 ```xml
 <dependencyManagement>
-  <dependencies>
-    <!-- 工具类 -->
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <version>${joda-time.version}</version>
-    </dependency>
+<dependencies>
+<!-- 工具类 -->
+<dependency>
+<groupId>joda-time</groupId>
+<artifactId>joda-time</artifactId>
+<version>${joda-time.version}</version>
+</dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>${commons-lang.version}</version>
-    </dependency>
+<dependency>
+<groupId>org.apache.commons</groupId>
+<artifactId>commons-lang3</artifactId>
+<version>${commons-lang.version}</version>
+</dependency>
 
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>${commons-io.version}</version>
-    </dependency>
+<dependency>
+<groupId>commons-io</groupId>
+<artifactId>commons-io</artifactId>
+<version>${commons-io.version}</version>
+</dependency>
 
-    <dependency>
-      <groupId>commons-net</groupId>
-      <artifactId>commons-net</artifactId>
-      <version>${common-net.version}</version>
-    </dependency>
+<dependency>
+<groupId>commons-net</groupId>
+<artifactId>commons-net</artifactId>
+<version>${common-net.version}</version>
+</dependency>
 
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
+<dependency>
+<groupId>com.fasterxml.jackson.core</groupId>
+<artifactId>jackson-databind</artifactId>
+<version>${jackson.version}</version>
+</dependency>
 
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${httpClient.verrsion}</version>
-    </dependency>
+<dependency>
+<groupId>org.apache.httpcomponents</groupId>
+<artifactId>httpclient</artifactId>
+<version>${httpClient.verrsion}</version>
+</dependency>
 
-    <dependency>
-      <groupId>org.quartz-scheduler</groupId>
-      <artifactId>quartz</artifactId>
-      <version>${quartz.version}</version>
-    </dependency>
+<dependency>
+<groupId>org.quartz-scheduler</groupId>
+<artifactId>quartz</artifactId>
+<version>${quartz.version}</version>
+</dependency>
 
-    <dependency>
-      <groupId>org.slf4j</groupId>
+<dependency>
+<groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
       <version>${slf4j.version}</version>
     </dependency>
