@@ -36,4 +36,25 @@ String message = map["message"];
 
 如果格式比较复杂的情况, 需要使用[这个地址](https://javiercbk.github.io/json_to_dart)来生成实体类, 可以先使用[这个网站](http://www.bejson.com)来校验json的格式是否正确。
 
-接下来将生成的
+![flutter和json](/images/mobile/flutter/flutter-json-class.png)
+
+接下来将生成的class复制到 xxx.dart 中, 并在文件头部加上以下内容:
+
+```dart
+import 'package:json_annotation/json_annotation.dart';
+part 'xxx.g.dart';
+
+#JsonSerializable(nullable: false)
+```
+
+接着在 terminal 中执行 `flutter packages pub run build_runner build` 命令来生成所需文件。
+
+也可以使用 `flutter package pub run build_runner watch` 命令来监控是否有需要生成的文件。
+
+使用方式:
+
+```dart
+Xxx xxx = new Xxx.fromJson(json);
+```
+
+嗯, 第二种方式是目前官方最推荐的方式了。
