@@ -55,3 +55,7 @@ class DefaultConstructor extends StatelessWidget {
   }
 }
 ```
+
+大概是这种效果:
+
+![listview效果](/images/mobile/flutter/flutter_listview_default_constructor.png)
