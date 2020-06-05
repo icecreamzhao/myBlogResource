@@ -27,6 +27,8 @@ tags:
 [第十五天的笔记-查找文件](/read-note/The_Linux_Command_Line/The-Linux-Command-Line-read-note-15Day.html)
 
 # 总结
+
+主要学习了如何使用gzip, bzip2, zip的使用方法, 如何使用tar创建系统归档文件。
 <!--more-->
 
 # 压缩文件
@@ -76,4 +78,63 @@ zless 命令
 
 归档经常作为系统备份的一部分来使用, 归档就是把很多文件捆绑成一个大文件的过程。
 
+| 选项 | 说明 |
+| :--: | :--: |
+| c | 为文件和/或目录列表创建归档文件 |
+| x | 抽取归档文件 |
+| r | 追加具体的路径到归档文件的末尾 |
+| t | 列出归档文件的内容 |
 
+```sh
+# 使用 tar 将目录归档
+tar cf dir.tar dir
+# 列出归档文件的内容
+tar tf dir.tar
+# 复原tar
+tar xf dir.tar
+```
+
+注意, 如果使用的是普通用户(没用超级用户权限)来对tar进行复原操作, 则复原的所有文件的权限都归当前操作用户所有!
+
+```sh
+# 单独抽取某个文件
+tar xf dir.tar pathname
+# 抽取匹配的文件
+tar xf dir.tar --wildcards 'home/me/playground/dir-\*/file-A'
+```
+
+还可以使用find命令和tar配合使用:
+
+```sh
+# 含义: 将playground文件夹中符合条件的文件使用 -exec 命令来调用 tar 的追加模式, 将文件追加到已有的归档文件中
+find playground -name 'file-A' -exec tar rf playground.tar '{}' '+'
+# 含义: 将playground文件夹中符合条件的文件使用管道的方式制作压缩归档文件 (.tgz 或者 .tar.gz)
+# - 代表从管道中读取
+find playground -name 'file-A' | tar cf - --files-from=- | gzip > playground.tgz
+# 上面命令的简化版 czf 代表用gzip方式压缩, cjf 代表用bzip2方式压缩
+find playground -name 'file-A' | tar czf playground.tgz -T -
+find playground -name 'file-A' | tar cjf playground.tbz -T -
+```
+
+还可以配合ssh工具将远端的系统(remote-stuff)中的文件夹复制到本地系统中:
+
+```sh
+[me@linuxbox ~]$ mkdir remote-stuff
+[me@linuxbox ~]$ cd remote-stuff
+[me@linuxbox remote-stuff]$ ssh remote-sys 'tar cf - Documents' | tar xf -
+[me@linuxbox remote-stuff]$ ls
+Documents
+```
+
+# zip
+
+使用方式:
+
+```sh
+# 将目录打包为zip
+zip -r dirPath.zip dirPath
+# 列出指定zip文件
+zip -l dirPath.zip dir1/dir2
+# 使用管道
+find playground -name "files-A" | zip -@ files-A.zip
+```

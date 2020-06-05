@@ -10,7 +10,7 @@ tags:
 - linux
 ---
 
-[第一天的笔记-基本的命令和使用方法](/read-note/The_Linux_Command_Line/The-Linux-Command-Line-readnote-1Day.html)
+[第一天的笔记-基本的命令和使用方法](/read-note/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
 
 # 总结
 

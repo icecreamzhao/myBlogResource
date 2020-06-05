@@ -93,4 +93,13 @@ className: 可设值如下:
 		* File = D:/logs/logging.log4j 指定消息输出到 logging.log4j 文件中
 		* MaxFileSize = 100KB 后缀可以是KB, MB或者GB。在日志文件达到该大小时, 将会自动滚动, 即将原来的内容移到logging.log4j.1文件中。
 		* MaxBackupIndex = 2 指定可以产生的滚动文件的最大数, 例如, 设为2则可以产生 logging.log4j.1, logging.log4j.2两个滚动文件和一个logging.log4j文件。
-* org.apache.log4j.WriterAppender(将日志信息以流格式发送到任意指定的地方)
+
+* 配置日志信息的输出格式(Layout):
+
+```xml
+log4j.appender.appenderName.layout = className
+```
+
+className 可设值如下:
+
+* org.apache.log4j.HTMLLayout ()

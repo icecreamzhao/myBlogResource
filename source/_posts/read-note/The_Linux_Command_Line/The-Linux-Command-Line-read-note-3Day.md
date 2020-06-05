@@ -72,13 +72,13 @@ $ apropos keyword # keyword是你要搜索的关键字
 ## 显示简洁的命令说明
 
 ```shell
-$ whatis pogram # program是要查看的命令
+$ whatis program # program是要查看的命令
 ```
 
 ## 显示程序info条目
 
 ```shell
-$ info pargram # program是要查看的命令
+$ info program # program是要查看的命令
 ```
 
 > info 命令

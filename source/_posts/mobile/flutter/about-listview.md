@@ -15,7 +15,7 @@ tags:
 1. The default constructor takes an explicit List<Widget> of children. This constructor is appropriate for list views with a small number of children because constructing the list requires doing work for every child that could possibly be displayed in the list view instead of just those children that are actually visible.
 
 
-<!--morl-->
+<!--more-->
 2. The listView.builder constructor takes an IndexedWidgetBuilder, which builds the children on demand. This constructor is appropriate for list views with a large (or infinite) number of children because the builder is called only for those children that are actually visible.
 
 3. The ListView.separated constructor takes two IndexedWidgetBuilders: `itemBuilder` builds child items on demand, and `separatorBuilder` similarly builds separator children which appear in between the child items. This constructor is appropriate for list views with a fixed number of children.

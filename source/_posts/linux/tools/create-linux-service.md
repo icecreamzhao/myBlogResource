@@ -46,7 +46,7 @@ WantedBy=multi-user.target
 ## 开启服务
 
 ```shell
-sudo systemctl daemon-reaload
+sudo systemctl daemon-reload
 sudo systemctl enable sunny.service
 sudo systemctl start sunny.service
 ```
