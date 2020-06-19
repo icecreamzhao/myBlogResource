@@ -2,11 +2,10 @@
 title: 使用VMware虚拟机CentOS操作系统遇到的共享文件夹的问题
 date: 2019-02-24 23:59:22
 categories:
+- 运维
 - 虚拟机
-- Linux
 tags:
 - 虚拟机
-- Linux
 ---
 
 # 前言

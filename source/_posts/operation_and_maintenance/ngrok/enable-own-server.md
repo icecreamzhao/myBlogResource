@@ -3,7 +3,6 @@ title: 开启属于自己的服务器
 date: 2019-09-22 17:02:53
 categires:
 - 运维
-- net
 - ngrok
 tags:
 - ngrok

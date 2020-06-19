@@ -3,7 +3,6 @@ title: DNS 和 DHCP 的区别以及原理
 date: 2019-09-14 18:55:00
 categories:
 - 运维
-- net
 tags:
 - web
 - dns

@@ -2,7 +2,7 @@
 title: 在centos下安装llvm和vim的ycm插件
 date: 2019-04-28 22:31:44
 categories:
-- 操作系统
+- 运维
 - linux
 tags:
 - linux
@@ -377,6 +377,10 @@ cd gcc-5.4.0
 ```shell
 cd ..
 mkdir gcc-build-5.4.0
+# 这里如果没有下载gcc和g++的话, 需要先通过包管理器安装一下, 要不然编译不了
+sudo apt-get install gcc g++
+# redhat系:
+yum install gcc gcc-c++
 cd gcc-build-5.4.0
 ../gcc-5.4.0/configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
 ```

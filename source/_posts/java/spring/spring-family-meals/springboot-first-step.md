@@ -2,11 +2,11 @@
 title: 快速构建SpringBoot项目
 date: 2019-03-20 21:41:44
 categories:
-- Java
+- 后端
+- java
 - spring
-- 学习
 tags:
-- Java
+- java
 - spring
 ---
 

@@ -2,11 +2,11 @@
 title: 连接池介绍
 date: 2019-05-19 17:46:41
 categories:
-- Java
+- 后端
+- java
 - spring
-- 学习
 tags:
-- Java
+- java
 - spring
 ---
 

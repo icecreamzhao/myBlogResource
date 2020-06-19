@@ -2,6 +2,7 @@
 title: php, thinkPHP使用apache服务器的配置方案
 date: 2018-12-30 23:52:04
 categories:
+- 前端
 - php
 tags:
 - php

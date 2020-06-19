@@ -2,11 +2,11 @@
 title: springboot配置多数据源
 date: 2019-05-19 17:05:15
 categories:
-- Java
+- 后端
+- java
 - spring
-- 学习
 tags:
-- Java
+- java
 - spring
 ---
 

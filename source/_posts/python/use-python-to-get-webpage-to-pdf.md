@@ -2,6 +2,7 @@
 title: 使用python获取网页内容并转换pdf
 date: 2020-05-31 07:55:53
 categories:
+- 前端
 - python
 tags:
 - beautiful soup

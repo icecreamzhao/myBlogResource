@@ -2,10 +2,10 @@
 title: linux 连接wifi
 date: 2020-01-01 04:25:16
 categories:
-- 操作系统
+- 运维
 - linux
 tags:
-- wifi
+- linux的使用
 ---
 
 # 步骤

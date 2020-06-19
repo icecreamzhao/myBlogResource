@@ -2,11 +2,10 @@
 title: java在linux系统上创建目录遇到的问题
 date: 2019-05-16 23:36:00
 categories:
-- 踩坑
-- Java
-- linux
+- 后端
+- java
 tags:
-- 踩坑
+- java
 ---
 
 # 问题

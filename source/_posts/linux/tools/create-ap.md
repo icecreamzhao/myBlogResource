@@ -2,11 +2,10 @@
 title: 使用树莓派开启热点
 date: 2019-08-18 11:16:36
 categories:
-- 操作系统
+- 运维
 - linux
-- 工具
 tags:
-- linux
+- linux的使用
 ---
 
 # 前言
@@ -61,7 +60,7 @@ git --version
 
 ```shell
 sudo apt update
-sudo apt-get install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpatl-dev gettext unzip
+sudo apt-get install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
 ```
 
 然后到[这里](https://github.com/git/git/archive)来查看最新版的链接地址, 使用wget下载下来。

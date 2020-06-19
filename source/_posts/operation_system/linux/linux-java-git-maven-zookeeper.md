@@ -2,7 +2,7 @@
 title: 'linux配置Java,Git,Maven,Zookeeper环境'
 date: 2018-12-05 21:47:02
 categories:
-- 操作系统
+- 运维
 - linux
 tags:
 - linux

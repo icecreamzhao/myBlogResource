@@ -2,10 +2,10 @@
 title: 'hexo博客使用git同步遇到的一些问题[linux版]'
 date: 2019-02-24 22:17:34
 categories:
+- 前端
 - hexo
 tags:
 - hexo
-- hexo同步
 ---
 
 # 前言

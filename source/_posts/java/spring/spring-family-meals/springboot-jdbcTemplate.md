@@ -2,11 +2,11 @@
 title: springboot jdbcTemplate介绍
 date: 2019-05-20 17:48:06
 categories:
-- Java
+- 后端
+- java
 - spring
-- 学习
 tags:
-- Java
+- java
 - spring
 ---
 

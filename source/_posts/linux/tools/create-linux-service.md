@@ -2,9 +2,10 @@
 title: 创建你自己的linux服务
 date: 2019-09-26 15:11:07
 categories:
-- 操作系统
+- 运维
 - linux
 tags:
+- linux的使用
 ---
 
 # 目标

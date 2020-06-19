@@ -2,8 +2,8 @@
 title: 使用git搭建服务器
 date: 2019-09-01 16:39:23
 categories:
+- 运维
 - git
-- 服务器
 tags:
 - git
 ---

@@ -2,10 +2,10 @@
 title: Linux关于backspace不好用的问题
 date: 2019-06-02 15:36:16
 categories:
-- 踩坑
-- Linux
+- 运维
+- centos
 tags:
-- 踩坑
+- centos
 ---
 
 # 问题

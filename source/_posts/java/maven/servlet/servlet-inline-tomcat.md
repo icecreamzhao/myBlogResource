@@ -2,9 +2,8 @@
 title: 使用maven插件创建一个servlet项目
 date: 2020-01-09 16:16:28
 categories:
-- Java
-- maven
-- servlet
+- 后端
+- java
 tags:
 - maven
 - servlet

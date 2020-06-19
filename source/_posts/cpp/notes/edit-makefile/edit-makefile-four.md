@@ -2,11 +2,11 @@
 title: 《跟我一起写makefile (四)》摘抄
 date: 2019-06-03 20:32:37
 categories:
-- C/C++
-- C++
-- 积累
+- 笔记
+- 跟我一起写makefile
 tags:
-- C++
+- c++
+- 笔记
 - makefile
 ---
 

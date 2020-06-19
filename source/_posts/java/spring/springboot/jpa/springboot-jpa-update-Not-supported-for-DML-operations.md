@@ -2,10 +2,8 @@
 title: springboot jpa update操作时报 Not supported for DML operations
 date: 2019-05-16 23:27:08
 categories:
-- 踩坑
-- Java
-- springboot
-- jpa
+- 后端
+- java
 tags:
 - 踩坑
 - java

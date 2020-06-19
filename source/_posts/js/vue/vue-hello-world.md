@@ -2,10 +2,9 @@
 title: 创建一个 vue 项目
 date: 2019-06-24 14:48:19
 categories:
-- js
+- 前端
 - vue
 tags:
-- js
 - vue
 ---
 

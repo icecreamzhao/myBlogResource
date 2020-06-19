@@ -13,7 +13,7 @@ subtitle: 特别不靠谱
 description: 对前端特别感兴趣的后端工程师
 keywords: "后端,java,Spring,database,算法"
 author: littleboyDK
-language: zh
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -61,63 +61,58 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-    读书笔记: reading_note
-    运维: operation_and_maintenance
-    开发笔记: develop_note
-    快乐的Linux命令行: The_Linux_Command_Line
-    linux的一些基本操作: Linux_Basic_Operation
-    商城: shopping_mall
-    操作系统: computer-operation
-    基础知识: computer-base
-    软件安装: software-setup
+    前端: front-code
+    移动开发: mobile
+    魔改: modify
+    微信小程序: mini-program
+    后端: back-code
+    加密: encode
+    破解: heck
+    工具: tools
+    数据库: database
+    踩坑: pit
     读开源项目: read-open-source
-    JavaScript权威指南: The-Definitive-Guide-read-note
-    软件整理: software-sorting
-    编程: coding
-    C程序设计语言: c-programming-language
+    开发笔记: develop-note
     技巧篇: tips
     配置篇: config
     前端篇: front
     功能篇: function
-    一些想法: a-little-thought
+    运维: operation-and-maintenance
     虚拟机: virual-machine
-    微信小程序: miniProgram
-    基础: based
-    学习: learn
-    踩坑: pit
-    魔改: modify
-    积累: tips
-    配置: config
-    数据库: database
-    破解: heck
-    加密: encode
-    开发: develop
-    工具: tools
-    移动开发: mobile
+    linux的一些基本操作: Linux-Basic-Operation
+    商城: shopping-mall
+    操作系统: computer-operation
+    软件整理: software-sorting
+    随笔: essay
+    笔记: note
+    最好的c++教程笔记: the-best-c-plus-plus-course
+    C程序设计语言: c-programming-language
+    JavaScript权威指南: The-Definitive-Guide-read-note
+    快乐的Linux命令行: The-Linux-Command-Line
+    跟我一起写makefile: write-makefile-with-me
 
 tag_map:
-    hexo起步: hexo-firstStep
-    hexo插件: hexo-plugins
-    Java小知识点: java-taps
+    笔记: note
+    最好的c++教程笔记: the-best-c-plus-plus-course
+    跟我一起写makefile: write-makefile-with-me
+    linux的使用: use-linux
     操作系统: computer-operation
-    商城开发: shopping_mall
-    快乐的Linux命令行: The_Linux_Command_Line
+    商城开发: shopping-mall
+    快乐的Linux命令行: The-Linux-Command-Line
     小知识点: taps
-    软件安装: software_setup
-    开源项目: open_source
+    软件安装: software-setup
+    开源项目: open-source
     编程: coding
     软件: software
-    hexo同步: hexo_sync
     小技巧: taps
-    笔记: read_note
-    想法: thought
+    随笔: essay
+    经历: experience
     启发: enlighten
     虚拟机: virual-machine 
-    微信小程序: miniProgram
-    基础: based
+    微信小程序: mini-program
     踩坑: pit
     加密: encode
-    开发笔记: develop_note
+    开发笔记: develop-note
     破解: heck
     
 
@@ -136,7 +131,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

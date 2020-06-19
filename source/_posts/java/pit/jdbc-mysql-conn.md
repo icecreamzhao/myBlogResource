@@ -2,9 +2,8 @@
 title: jdbc连接MySql8.0 报Client does not support authentication protocol requested by server
 date: 2019-07-02 11:59:00
 categories:
-- 踩坑
-- Java
-- jdbc
+- 后端
+- java
 tags:
 - jdbc
 - mysql

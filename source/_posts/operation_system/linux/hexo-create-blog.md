@@ -2,7 +2,7 @@
 title: 记一次添加shell命令的经历
 date: 2019-06-01 17:56:58
 categories:
-- 操作系统
+- 运维
 - linux
 tags:
 - hexo

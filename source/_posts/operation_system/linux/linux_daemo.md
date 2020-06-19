@@ -2,7 +2,7 @@
 title: Linux守护进程
 date: 2019-04-14 09:04:17
 categories:
-- 操作系统
+- 运维
 - linux
 tags:
 - linux

@@ -2,7 +2,7 @@
 title: 微信小程序的一些技巧
 date: 2019-08-01 13:18:55
 categories:
-- js
+- 前端
 - 微信小程序
 tags:
 - 微信小程序
@@ -280,5 +280,4 @@ returnToPrePage: function() {
 ```
 
 # 微信小程序 选择器picker的使用
-
 

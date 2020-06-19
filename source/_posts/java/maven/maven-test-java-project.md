@@ -2,8 +2,8 @@
 title: 使用maven来对测试用例进行测试
 date: 2019-09-06 10:02:08
 categories:
-- Java
-- maven
+- 后端
+- java
 tags:
 - maven
 ---

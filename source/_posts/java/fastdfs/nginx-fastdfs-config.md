@@ -2,9 +2,8 @@
 title: fastDFS和ngnix的配置 
 date: 2019-07-07 09:13:55
 categories:
-- Java
-- fastdfs
-- 配置
+- 后端
+- java
 tags:
 - fastdfs
 - nginx

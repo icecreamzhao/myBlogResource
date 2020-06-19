@@ -2,11 +2,10 @@
 title: c++的Makefile文件的编写
 date: 2019-05-26 19:19:53
 categories:
-- C/C++
-- C++
-- 积累
+- 笔记
+- 跟我一起写makefile
 tags:
-- C++
+- 笔记
 - makefile
 ---
 

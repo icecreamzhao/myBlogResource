@@ -2,7 +2,7 @@
 title: CentOS的ssh远程连接遇到的问题
 date: 2019-06-21 19:17:15
 categories:
-- 操作系统
+- 运维
 - linux
 tags:
 - linux

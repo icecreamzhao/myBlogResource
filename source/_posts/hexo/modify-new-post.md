@@ -2,6 +2,7 @@
 title: 记一次修改hexo新建文件的方式
 date: 2019-05-28 01:09:19
 categories:
+- 前端
 - hexo
 - 魔改
 tags:

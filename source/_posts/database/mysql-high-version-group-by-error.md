@@ -4,8 +4,10 @@ date: 2019-12-01 09:51:45
 categories:
 - 数据库
 - mysql
+- 踩坑
 tags:
 - mysql
+- 踩坑
 ---
 
 # 问题

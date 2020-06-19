@@ -2,8 +2,9 @@
 title: mybatis-enhance的tableFieldsConstruct方法
 date: 2019-01-16 00:15:51
 categories:
+- 后端
 - 读开源项目
-- Java
+- java
 - mybatis-enhance
 tags:
 - mybatis

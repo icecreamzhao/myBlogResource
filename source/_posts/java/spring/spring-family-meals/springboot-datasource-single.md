@@ -2,11 +2,11 @@
 title: SpringBoot配置单数据源
 date: 2019-03-21 07:46:23
 categories:
-- Java
+- 后端
+- java
 - spring
-- 学习
 tags:
-- Java
+- java
 - spring
 ---
 

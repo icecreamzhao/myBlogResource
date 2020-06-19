@@ -2,10 +2,10 @@
 title: hexo-写作
 date: 2018-11-16 22:41:55
 categories:
+- 前端
 - hexo
 tags:
 - hexo
-- hexo插件
 ---
 
 # 使用hexo来编写一篇博客的步骤

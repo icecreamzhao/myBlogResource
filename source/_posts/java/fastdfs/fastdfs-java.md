@@ -2,9 +2,8 @@
 title: fastDFS和java
 date: 2019-07-25 17:37:35
 categories:
-- Java
-- fastdfs
-- 开发
+- 后端
+- java
 tags:
 - fastdfs
 ---

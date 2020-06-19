@@ -2,11 +2,10 @@
 title: CentOS下使用ftp协议连接ftp服务器
 date: 2019-08-14 16:07:46
 categories:
-- 操作系统
+- 运维
 - linux
-- 工具
 tags:
-- ftp
+- linux的使用
 ---
 
 # 前言

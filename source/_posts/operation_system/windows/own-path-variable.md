@@ -2,12 +2,10 @@
 title: 在windows系统中自定义cmd命令
 date: 2019-01-19 12:00:12
 categories:
-- 操作系统
+- 运维
 - windows
 tags:
-- 操作系统
 - windows
-- 小技巧
 ---
 
 # 前言

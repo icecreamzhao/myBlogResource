@@ -2,12 +2,13 @@
 title: rocketMQ的安装与配置 
 date: 2019-03-21 11:32:26
 categories:
-- Java
-- tools
+- 后端
+- java
 - mq
+- rocketMQ
 tags:
-- Java
-- mq
+- java
+- rocketMQ
 ---
 
 # 前言

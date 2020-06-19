@@ -2,6 +2,7 @@
 title: 使用cocoscreator遇到的一些问题
 date: 2019-11-16 11:40:54
 catetories:
+- 前端
 - cocos
 - cocoscreator
 tags:

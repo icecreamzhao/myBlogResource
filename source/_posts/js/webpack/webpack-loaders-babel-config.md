@@ -2,10 +2,10 @@
 title: webpack-loaders和babel的配置
 date: 2019-03-04 23:14:35
 categories:
-- js
+- 前端
 - webpack
 tags:
-- js
+- webpack
 ---
 
 # 前言

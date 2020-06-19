@@ -2,11 +2,10 @@
 title: Invalid character found in the request target.The valid characters are defined in RFC 7230 and RFC3986
 date: 2019-05-16 23:45:23
 categories:
-- 踩坑
-- Java
-- tomcat
+- 后端
+- java
 tags:
-- 踩坑
+- tomcat
 ---
 
 # 问题

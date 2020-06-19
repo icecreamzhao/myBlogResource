@@ -2,12 +2,12 @@
 title: mysql创建数据库时遇到的字符集的问题
 date: 2019-07-14 19:14:36
 categories:
-- 踩坑
 - 数据库
 - mysql
+- 踩坑
 tags:
 - mysql
-- pit
+- 踩坑
 ---
 
 # mysql 查看字符集

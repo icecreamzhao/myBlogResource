@@ -2,7 +2,7 @@
 title: 关于微信小程序的canvas
 date: 2019-06-09 10:45:14
 categories:
-- js
+- 前端
 - 微信小程序
 tags:
 - 微信小程序
@@ -13,11 +13,12 @@ tags:
 
 [在canvas上显示图片](#在canvas上显示图片)
 [在canvas上画图](#在canvas上画图)
-<!--more-->
 
 # 在canvas上显示图片
 
 首先, 我们需要一个canvas的页面元素:
+
+<!--more-->
 
 ```html
 <!-- canvas.wxml -->

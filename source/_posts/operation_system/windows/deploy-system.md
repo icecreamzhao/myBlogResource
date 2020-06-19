@@ -2,10 +2,9 @@
 title: 装机
 date: 2018-11-30 19:51:27
 categories:
-- 操作系统
+- 运维
 - windows
 tags:
-- 操作系统
 - windows
 ---
 

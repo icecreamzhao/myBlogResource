@@ -2,11 +2,11 @@
 title: springboot事务介绍
 date: 2019-05-20 22:13:25
 categories:
-- Java
+- 后端
+- java
 - spring
-- 学习
 tags:
-- Java
+- java
 - spring
 ---
 

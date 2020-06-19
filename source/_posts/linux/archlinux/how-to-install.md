@@ -2,8 +2,8 @@
 title: 在树莓派上安装 archlinux
 date: 2020-03-17 01:51:35
 -categories:
+- 运维
 - 操作系统
-- linux
 - archlinux
 tags:
 - archlinux

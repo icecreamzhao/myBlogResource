@@ -2,19 +2,28 @@
 title: Log4j 日志配置
 date: 2019-12-18 03:42:20
 categories:
-- Java
-- log4j
+- 后端
+- java
 tags:
-- jog4j
+- jog4j2
+- java
 ---
 
-# 简介
+# 前言
 
-Log4j 有三个主要的组件, Loggers(记录器), Appenders(输出源)和Layouts(布局)。这里可以简单的理解为日志级别, 日志要输出的地方和日志以何种方式输出。综合使用三个组件可以轻松地记录的类型和级别, 并可以在运行时控制日志输出的样式和位置。
+这里是对于 Log4j 2 的[官方文档](http://logging.apache.org/log4j/2.x/manual/index.html)的不完全翻译。
 
-* Loggers
+# 介绍
 
-Loggers 组件在此系统中被分为五个级别: DEBUG, INFO, WARN, ERROR, FATAL, 这五个级别是有顺序的, DEBUG < INFO < WARN < ERROR < FATAL, 分别用来指定这条日志信息的重要程度, 明白这一点很重要, Log4j有一条规则: 只输出级别不低于设定级别的日志信息, 假设Loggers级别设定为INFO, 则INFO、WARN、ERROR和FATAL级别的日志都会输出, 而级别比INFO低的DEBUG则不会输出。
+EU SEMERER 项目中使用的 tracing API 经过无数次的增强, 多次改进和大量的工作演变成了 log4j。
+
+日志语句对于调试应用程序来说可能并不高级, 但是对于大型的多线程应用程序和分布式应用程序来说, 调试器可能并不像想象中那么好用, 在使用调试器的过程中, 很容易在复杂的数据结构和控制流程的细节上迷失方向, 而且日志可以永久保存以供日后研究。
+
+## Log4j 2
+
+Log4j 2 相较于 Log4j 和 Logback 相比有以下优势:
+
+1. Log4j 2 设计为课用
 
 * Appenders
 

@@ -2,11 +2,11 @@
 title: javafx springboot+maven打包
 date: 2019-05-16 22:46:34
 categories:
-- Java
-- Javafx
+- 后端
+- javafx
 tags:
-- Java
-- Javafx
+- java
+- javafx
 ---
 
 # 前言

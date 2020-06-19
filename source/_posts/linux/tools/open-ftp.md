@@ -2,12 +2,10 @@
 title: 在debian上开启ftp
 date: 2019-08-14 15:37:29
 categories:
-- 操作系统
+- 运维
 - linux
-- 工具
 tags:
-- debian
-- ftp
+- linux的使用
 ---
 
 # 前言

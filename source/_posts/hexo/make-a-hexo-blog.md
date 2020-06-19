@@ -2,15 +2,13 @@
 title: hexo建站教程
 date: 2018-11-15 19:43:59
 categories:
+- 前端
 - hexo
 tags:
 - hexo
-- hexo起步
 ---
 
 # 使用GitHub Pages加hexo搭建博客教程
-
-<br>
 
 ## 介绍
 
@@ -19,8 +17,6 @@ tags:
 GitPages是Github网站用于给开发者搭建介绍自己的开源项目的静态网站, 不使用数据库存储数据, 所以我觉得用来写博客再合适不过了。而且显然不只我自己一个人这么认为, 甚至现在已经有帮助你更快速的搭建一个看起来现代化的博客的工具了, 就比如hexo, 它支持你使用**markdown**语法来写笔记, 其他的一切交给它就好, 是一款非常棒的工具。
 
 <!--more-->
-
-<br>
 
 ## 安装
 
@@ -44,8 +40,6 @@ GitPages是Github网站用于给开发者搭建介绍自己的开源项目的静
 
 **ok! 这样你就拥有了属于你自己的GitHub Pages项目!**
 
-<br>
-
 ### 安装hexo
 
 hexo自带[简中文档](https://hexo.io/zh-cn/docs/), 简单来说, 就是使用markdown解析文章, 并自动生成漂亮的静态网页。
@@ -61,8 +55,6 @@ hexo-server
 安装命令是: `npm install hexo-server --save`
 
 其他的插件[在这里](https://hexo.io/plugins/)
-
-<br>
 
 ### 安装Git
 
@@ -81,8 +73,6 @@ Git是用来管理项目版本的, 可以使用这个工具将你的项目上传
 `ssh-keygen -t rsa -C "你的邮箱"`
 
 连续三个回车, 你就能在你的用户根目录下找到.ssh文件夹了, 将id_rsa.pub文件中的内容拷贝到你的github账号设置中的SSH and GPG keys中去, 这样你就可以将你的项目上传至你的Github账号的项目中了。
-
-<br>
 
 ### 万事大吉, 创建博客!
 
@@ -120,7 +110,5 @@ deploy:
   repo: git@github.com:icecreamzhao/icecreamzhao.github.io.git
   branch: master
 ```
-
-<br>
 
 配置好了之后, 就大功告成了! 现在让我们来看看搭建好的博客长什么样子吧! 使用`hexo server` 命令(需要安装hexo-server插件), 启动服务器, 在浏览器访问http://localhost:4000

@@ -2,11 +2,10 @@
 title: 在服务器上部署seafile
 date: 2019-09-24 13:56:56
 categories:
-- 操作系统
+- 运维
 - linux
-- 工具
 tags:
-- 工具
+- linux的使用
 ---
 
 # 目标
