@@ -8,6 +8,7 @@ hexo="$HEXO/hexo"
 cd $MYBLOG
 $hexo clean
 wait
+$hexo douban -b
 $hexo g
 wait
 $hexo s &

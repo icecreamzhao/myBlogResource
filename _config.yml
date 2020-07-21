@@ -85,6 +85,7 @@ category_map:
     软件整理: software-sorting
     随笔: essay
     笔记: note
+    读书笔记: read-note
     最好的c++教程笔记: the-best-c-plus-plus-course
     C程序设计语言: c-programming-language
     JavaScript权威指南: The-Definitive-Guide-read-note
@@ -165,3 +166,17 @@ jsonContent:
       excerpt: false
       categories: true
       tags: false
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+douban:
+  user: 84480222
+  builtin: true
+  book:
+    title: '阅读'
+    quote: '年纪轻轻的什么不能学?'
+  timeout: 10000
