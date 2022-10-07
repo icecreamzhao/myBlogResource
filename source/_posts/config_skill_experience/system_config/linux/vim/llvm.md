@@ -1,0 +1,544 @@
+---
+title: 在centos下安装llvm和vim的ycm插件
+date: 2019-04-28 22:31:44
+categories:
+- 配置技巧/经验
+- 系统配置
+- linux
+tags:
+- linux
+- llvm
+- gcc
+- ycm
+---
+
+# 前言
+
+原本只是想在vim上装几个插件玩玩, 然后发现了YCM这款插件, 之后, 就有了今天的这篇博客。
+经历了连续一个星期的战斗, 终于还是被我安装上了llvm, 更新了gcc的版本和vim的版本, 特此记录一下战斗的过程。
+<!--more-->
+
+# 安装YCM
+
+YCM插件可以对代码进行事实上的语义分析, 实现了真正的智能提示和补全插件。
+
+## Vundle
+
+在安装YCM插件之前, 需要先安装一下vim的插件管理器: Vundle。
+
+安装步骤:
+
+### 下载插件
+
+```shell
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+### 配置插件
+
+打开~/.vimrc, 在文件头加入以下内容:
+
+```shell
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+```
+
+可以看出, Vundle支持多种形式的插件源, 包括github上的插件, http://vim-srcipts.org/vim/scripts.html 上的插件, 非github上的git插件, 本地硬盘上的插件等。
+
+### 安装插件
+
+打开vim, 运行`:PluginInstall`命令来自动安装插件。
+
+**注意, 这里如果不能翻墙的话, 建议还是使用git安装!!!**
+
+> 感谢写[这篇博客](https://www.cnblogs.com/YMaster/p/11209813.html)的老铁, 非常感谢!
+
+git安装方式如下:
+
+```shell
+cd ~/.vim/bundle
+git clone https://github.com/ycm-core/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
+# 这里安装子模块会出现
+# fatal: unable to access 'https://go.googlesource.com/tools/': Failed to connect to go.googlesource.com port 443: 连接超时
+# 解决办法:
+cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/go/src/golang.org/x
+git clone https://github.com/golang/tools.git
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+```
+
+![llvm](/images/linux/computer-operation/llvm.jpg)
+
+我在安装完之后, 再次打开vim, 提示我vim版本低, 最低版本为7.4.143, 好了, 这就是我遇到的第一个坑。
+
+怎么办, 更新vim呗。
+
+## 更新vim
+
+我直接将vim7升级到了vim8, 升级步骤:
+
+### 删除旧版本的vim
+
+```shell
+yum remove vim -y
+```
+
+### 安装ncurses
+
+这里是它的[简介](https://www.invisible-island.net/ncurses/announce.html)
+
+```shell
+* yum install ncurses-devel -y
+```
+
+> 如果没有vpn, 八成会下载失败, 可以手工安装:
+```shell
+wget http://mirror.centos.org/centos/7/os/x86_64/Packages/ncurses-devel-5.9-13.20130511.el7.x86_64.rpm
+yum install ncurses-devel-5.9-13.20130511.el7.x86_64.rpm
+```
+
+### 下载vim
+
+```shell
+git clone https://github.com/vim/vim.git
+cd vim/src
+make install
+```
+
+### 配置环境变量
+
+编辑文件: `/usr/local/bin/bim /etc/profile.d/path.sh`
+
+```sh
+#!/bin/bash
+export PATH=$PATH:/usr/local/bin/vim
+```
+source /etc/profile.d/path.sh
+
+ok, vim更新成功, 接下来打开vim的时候发现还是有错误信息:
+
+```shell
+YouCompleteMe unavailable: requires Vim compiled with Python (2.7.1+ or 3.4+) support.
+Press ENTER or type command to continue
+```
+
+这是由于vim不支持python导致的, 可以通过:
+
+```shell
+vim --version | grep python
+```
+
+来查看是否支持。ok, 这是我遇到的第二个坑, 怎么办, 安装Python呗。
+
+## 安装Python3
+
+### 1. 准备安装环境
+
+```shell
+sudo yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make gdbm-devel
+```
+
+### 2. 编译安装Python 3
+
+[源码下载地址](https://www.python.org/downloads/source)
+
+### 2.1 获取源码
+
+```shell
+~$ wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
+~$ tar -zxvf Python-3.6.2.tgz
+```
+
+### 2.2 编译安装
+
+```shell
+~$ cd Python-3.6.2
+~$ ./configure prefix=/usr/local/python3
+~$ make
+~$ sudo make install
+~$ sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+~$ sudo ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+```
+
+安装好Python了之后, 在vim源码的根目录下使用
+
+```shell
+./configure ./configure --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes --enable-python3interp=yes
+make
+sudo make install
+```
+
+ok, 现在我们的vim已经支持python3了, 那么接着安装YCM。
+
+YCM的vim插件已经安装好了, 接下来安装clang和llvm。
+
+## 安装llvm
+
+### 下载源码
+
+安装svn, 用于下载llvm的源码
+
+centos:
+
+```shell
+yum install svn -y
+```
+
+debian:
+
+```shell
+sudo apt-get install subversion
+```
+
+下载llvm源码
+
+```shell
+mkdir llvm_source_build
+cd llvm_source_build
+svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm
+```
+
+下载clang源码
+
+```shell
+cd llvm/tools
+svn co http://llvm.org/svn/llvm-project/cfe/trunk clang
+```
+
+下载clang工具源码(可选)
+
+```shell
+cd llvm/tools/clang/tools
+svn co http://llvm.org/svn/llvm-project/clang-tools-extra/trunk extra
+```
+
+下载Complier-RT源码(可选)
+
+```shell
+cd llvm/projects
+svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
+```
+
+### 配置和安装llvm和clang
+
+下载好之后, 就可以编译了。
+
+首先返回到llvm_source_build目录下, 新建一个build目录。
+
+```shell
+cd ../../
+mkdir build
+```
+
+cmake一下:
+
+```shell
+cd /build
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="X86" -DCMAKE_INSTALL_PREFIX=/opt/llvm ../llvm
+```
+
+上面的-CMAKE_INSTALL_PREDIX=/opt/llvm 表示要安装的目录。
+
+然后我惊讶的发现, cmake的版本太低, 这是我遇到的第三个坑, 怎么办, 升级cmake呗。
+
+### 升级cmake
+
+#### 下载cmake
+
+```shell
+wget https://cmake.org/files/v3.6/cmake-3.6.2.tar.gz
+```
+
+#### 解压
+
+```shell
+tar xvf cmake-3.6.2.tar.gz && cd cmake-3.6.2/
+```
+
+#### 编译安装
+
+注意: 这里如果是debian系统, 是没有gmake的, 那么接下来需要这些操作:
+
+这里参考了[这篇帖子](http://cmake.3232098.n2.nabble.com/v3-7-0-archive-cryptor-private-h-compile-error-td7594660.html#a7594664)。
+
+```shell
+mkdir build
+cd build
+sudo apt-get install librhash-dev
+sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install libbz2-dev
+sudo apt-get install liblzma-dev
+sudo apt-get install libarchive-dev
+sudo apt-get install libjsoncpp-dev
+../bootstrap --system-libs
+make
+make install
+```
+
+> centos 版本的操作:
+```shell
+mkdir build
+cd build
+../bootstrap
+gmake
+gmake install
+```
+
+#### 查看编译之后的版本
+
+```shell
+/usr/local/bin/cmake --version
+```
+
+#### 移除旧版本
+
+```shell
+yum remove cmake -y
+```
+
+#### 新建软连接
+
+```shell
+ln -s /usr/local/bin/cmake /usr/bin/
+```
+
+#### 查看版本
+
+```shell
+cmake --version
+```
+
+在编译安装这一步的时候, 我遇到了gcc的版本太低的问题, 这是我遇到的第四个坑。怎么办, 升级gcc呗。
+
+### 升级gcc
+
+#### 下载gcc
+
+```shell
+wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-5.4.0/gcc-5.4.0.tar.gz
+tar xvf gcc-5.4.0.tar.gz
+cd gcc-5.4.0
+```
+
+#### 下载依赖包
+
+```shell
+./contrib/download_prerequisites
+```
+
+#### 配置编译参数
+
+```shell
+cd ..
+mkdir gcc-build-5.4.0
+# 这里如果没有下载gcc和g++的话, 需要先通过包管理器安装一下, 要不然编译不了
+sudo apt-get install gcc g++
+# redhat系:
+yum install gcc gcc-c++
+cd gcc-build-5.4.0
+../gcc-5.4.0/configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
+```
+
+#### 编译安装
+
+```shell
+make -j4  #允许4个编译命令同时执行，加速编译过程
+make install
+```
+
+#### 配置环境变量
+
+编译~.bashrc
+
+```shell
+export LD_LIBRARY_PATH=/usr/local/gcc-4.9.2/lib64:/usr/local/lib:$LD_LIBRARY_PATH
+export PATH=/usr/local/gcc-4.9.2/bin:/usr/local/bin:$PATH
+```
+
+#### 查看gcc版本
+
+```shell
+gcc -v
+g++ -v
+```
+
+升级了cmake之后, 让我们来继续编译llvm。
+
+### 编译llvm
+
+```shell
+cd llvm_source_build/build
+export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="X86" -DCMAKE_INSTALL_PREFIX=/opt/llvm ../llvm
+make
+sudo make install
+```
+
+### 配置环境变量
+
+```shell
+#配置一下环境变量
+vim /etc/profile
+#在末尾添加
+export PATH=$PATH:/opt/llvm/bin
+```
+
+这里我整整编译了一晚上才编译好, 期间遇到了 `- version GLIBCXX_3.4.20' not found` 的问题, 就是gcc的版本太低, 或者是和配置的gcc的版本不一致。
+
+### 编译ycm_core
+
+现在准备工作算是完成了, 现在开始正式开始编译ycm_core
+
+生成makefile文件
+
+```shell
+mkdir ycm_build
+cd ycm_build
+# 这里PATH_TO_LLVM_ROOT的路径应该是你的llvm的build的路径
+cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=~/ycm_temp/llvm_root_dir . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+```
+
+这里我遇到了无法找到Boost路径的问题, 直接安装一下就好了:
+
+```shell
+sudo apt-get install libboost-all-dev
+```
+
+编译makefile
+
+```shell
+# 将clang-c复制到ycm插件中
+cp -r  ~/programmingTools/llvm/llvm/tools/clang/include/clang-c ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/ClangCompleter/
+cmake --build . --target ycm_core --config Release
+```
+
+### 编辑ycm的配置文件
+
+```shell
+ cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/
+```
+
+# 配置 ycm 的补全库
+
+编写vimrc中指定的.ycm_extra_conf.py, 添加需要显示的库:
+
+```
+flags = [
+`-isystem`,
+`/usr/include/c++/8`
+]
+```
+`-isystem`代表自己添加的库。
+
+# 2021.03.27更新
+
+今天重新在archlinux上安装了ycm插件, 这次直接使用plug-vim插件管理工具来安装
+
+vimrc:
+```
+call plug#begin ('~/.vim/plugged')
+Plug 'Valloric/YouCompleteMe'
+call plug#end ()
+```
+
+在vim中执行 `:PlugInstall`, 安装插件。
+
+使用pacman安装所需要的工具:
+
+```
+sudo pacman -S gcc python3
+```
+
+在 `~/.vim/plugged` 中找到 `YouCompleteMe` 文件, 执行`./install.sh --all` 来对ycm插件编译, 在使用的时候遇到了无法`libtinfo.so.5 not found`, google了一天, 解决方案是安装 `ncurses5-compat-libs`(这个是arch的解决方案, 其他的linux发行版本应该是ncurses5)
+
+```
+mkdir ~/pkg && cd ~/pkg
+git clone https://aur.archlinux.org/ncurses5-compat-libs.git
+cd ncurses5-compat-libs
+makepkg -s -A
+sudo pacman -U ncurses5-compat-libs-6.2-1-armv7h.pkg.tar.xz
+```
+
+ok, libtinfo.so.5 这个问题解决了, 还有一个问题是java不能自动补全。原因是因为`eclipse.jdt.ls`只支持jdk11, 甚至jdk12都不行, 所以需要安装:
+
+```
+sudo pacman -S jdk-openjdk11
+# 切换jdk
+sudo archlinux-java java-11-openjdk
+# 在目录/usr/lib/jvm/下放着所有通过pacman安装的jdk版本
+```
+
+ok, 现在在`~/.vim/plugged/YouCompleteMe`目录下执行`./install.sh --all`, 应该就什么问题都没有了。
+
+# 以下是我参考的所有博客和帖子:
+
+[【vim】插件管理及代码智能提示与补全环境的配置](https://www.cnblogs.com/zzqcn/p/4660615.html)
+[CentOS 7 + vim + ycm (clang) + NERDTree](https://www.zybuluo.com/searcher2xiao/note/136156)
+[VIM、YouCompleteMe折腾配置以及clang+llvm编译安装](https://www.jianshu.com/p/c24f919097b3)
+[centos升级vim](https://www.cnblogs.com/lavezhang/p/7227777.html)
+[CentOS7解决YouCompleteMe对Python的依赖](https://blog.csdn.net/uu203/article/details/82621523)
+[安装LLVM+Clang教程](https://blog.csdn.net/l2563898960/article/details/82871826)
+[Centos7安装高版本Cmake](https://blog.csdn.net/jiang_xinxing/article/details/77945478)
+[Centos升级gcc至5.4.0](https://www.jianshu.com/p/8ac4e50d182d)
+[centOS系统gcc升级步骤(亲自测试成功)](https://blog.csdn.net/zhaojianting/article/details/81095120)
+[CentOS下gcc4.9编译安装教程](https://www.jianshu.com/p/f0b28fb4661d)
+[How to set path for sudo commands](https://superuser.com/questions/927512/how-to-set-path-for-sudo-commands)
+[CMake 指定gcc编译版本](https://blog.csdn.net/haohaibo031113/article/details/72833327)
+[关于在centos下安装python3.7.0以上版本时报错ModuleNotFoundError: No module named '_ctypes'的解决办法](https://blog.csdn.net/qq_36416904/article/details/79316972)
+[Vim智能补全插件YouCompleteMe安装](https://blog.csdn.net/leaf5022/article/details/21290509#comments)
+[llvm之旅第一站 － 编译及简单使用](http://www.nagain.com/activity/article/4/)
+[Getting Started with the LLVM System](https://blog.csdn.net/zhang14916/article/details/89288196)
+[gRPC编译- version `GLIBCXX_3.4.20' not found 问题](https://blog.csdn.net/weixin_34365417/article/details/86870934)
+[CentOS 6.4(64位)上安装错误libstdc++.so.6(GLIBCXX_3.4.14)解决办法](https://blog.csdn.net/lqzixi/article/details/24738337)
+[linux下提示/usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.14' not found 解决办法](https://www.cnblogs.com/wx7217242/articles/4684530.html)
+[Linux C/C++程序员CentOS 6.5安装YouCompleteMe使用vim语法自动补全](http://www.bubuko.com/infodetail-1978493.html) 这个比较全!
+[10款优秀Vim插件帮你打造完美IDE](https://www.cnblogs.com/linuxprobe/p/5926821.html)
+

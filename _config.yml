@@ -37,7 +37,8 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: false # Open external links in new tab
+external_link: 
+  enable: false # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -61,36 +62,39 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-    前端: front-code
-    移动开发: mobile
-    魔改: modify
-    微信小程序: mini-program
-    后端: back-code
-    加密: encode
-    破解: heck
-    工具: tools
-    数据库: database
-    踩坑: pit
-    读开源项目: read-open-source
-    开发笔记: develop-note
-    技巧篇: tips
-    配置篇: config
-    前端篇: front
-    功能篇: function
-    运维: operation-and-maintenance
-    虚拟机: virual-machine
-    linux的一些基本操作: Linux-Basic-Operation
-    商城: shopping-mall
-    操作系统: computer-operation
-    软件整理: software-sorting
-    随笔: essay
-    笔记: note
-    读书笔记: read-note
-    最好的c++教程笔记: the-best-c-plus-plus-course
-    C程序设计语言: c-programming-language
-    JavaScript权威指南: The-Definitive-Guide-read-note
-    快乐的Linux命令行: The-Linux-Command-Line
-    跟我一起写makefile: write-makefile-with-me
+  前端技巧/经验: front_skill_experience
+  基础: base
+  后端技巧/经验: back_skill_experience
+  汇编: assembly
+  移动开发技巧/经验: mobile_skill_experience
+  脚本语言技巧/经验: script_skill_experience
+  博客技巧/经验: blog_skill_experience
+  其他无法归类的技巧/经验: other_skill_experience
+  破解: heck
+  做题: leetcode
+  笔记: note
+  读博客笔记: blog_note
+  开发笔记: develop_note
+  读书笔记: read_note
+  解读源码笔记: source_note
+  配置技巧/经验: config_skill_experience
+  中间件: middleware
+  开发环境配置（运维）: develop_envior_config
+  系统配置: system_config
+  开发工具配置: develop__tool_config
+  语法糖: syntactic_sugar
+  难记的语法难点/使用场景: hard_point/use_envior
+  感悟: sentiment
+  好物收集: collect
+  # detail
+  跟我一起写makefile: edit-makefile
+  快乐的Linux命令行: The_Linux_Command_Line
+  JavaScript权威指南: javascript-The-Definitive-Guide
+  微信小程序: mini-program
+  虚拟机: virtual-machine
+  汇编语言: assembly
+  最好的c++教程: the-best-c-plus-plus-course
+  C程序设计语言: the_c_programming_language
 
 tag_map:
     笔记: note
@@ -114,6 +118,7 @@ tag_map:
     踩坑: pit
     加密: encode
     开发笔记: develop-note
+    汇编: assembly
     破解: heck
     
 
