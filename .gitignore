@@ -6,4 +6,5 @@ public/
 node_modules/
 themes/yilia/node_modules/
 yarn.lock
-themes/
+themes/next/
+themes/yilia/
