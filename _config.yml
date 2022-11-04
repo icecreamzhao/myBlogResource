@@ -9,7 +9,7 @@ server:
 
 # Site
 title: LittleboyDK's Blog
-subtitle: 特别不靠谱
+subtitle: 希望自己变得不冲动的冲动鬼
 description: 对前端特别感兴趣的后端工程师
 keywords: "后端,java,Spring,database,算法"
 author: littleboyDK
@@ -57,7 +57,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 2
-  order_by: date
+  order_by: -updated
   
 # Category & Tag
 default_category: uncategorized
