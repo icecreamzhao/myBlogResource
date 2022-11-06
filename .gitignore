@@ -6,5 +6,6 @@ public/
 node_modules/
 themes/yilia/node_modules/
 yarn.lock
+pakcage-lock.json
 themes/next/
 themes/yilia/

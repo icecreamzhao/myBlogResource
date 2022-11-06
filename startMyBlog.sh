@@ -1,5 +1,5 @@
 #!/bin/bash
-HEXO="/home/littleboy/myProject/myBlogResource/node_modules/hexo-cli/bin"
+HEXO="/home/littleboy/myProject/myBlogResource/node_modules/hexo/bin"
 
 MYBLOG="/home/littleboy/myProject/myBlogResource"
 
