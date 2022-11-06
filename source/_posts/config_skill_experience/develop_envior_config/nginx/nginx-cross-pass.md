@@ -5,7 +5,6 @@ categories:
 - 配置技巧/经验
 - 开发环境配置（运维）
 tags:
-- 跨域
 - nginx
 ---
 

@@ -57,7 +57,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 6
-  order_by: -updated
+  order_by: -created
   
 # Category & Tag
 default_category: uncategorized
@@ -90,15 +90,26 @@ category_map:
   跟我一起写makefile: edit-makefile
   快乐的Linux命令行: The_Linux_Command_Line
   JavaScript权威指南: javascript-The-Definitive-Guide
+  大型网站技术架构: huge-website-tec-architeve
   微信小程序: mini-program
   虚拟机: virtual-machine
   汇编语言: assembly
-  最好的c++教程: the-best-c-plus-plus-course
+  最好的cpp教程: the-best-cpp-course
   C程序设计语言: the_c_programming_language
+  商城: shopping_mall
+  技巧篇: taps
+  配置篇: config
+  前端篇: front
+  功能篇: function
 
 tag_map:
     笔记: note
-    最好的c++教程笔记: the-best-c-plus-plus-course
+    支付: payment
+    读书笔记: read-note
+    架构: architecture
+    性能: performance
+    缓存: memory
+    最好的cpp教程笔记: the-best-cpp-course
     跟我一起写makefile: write-makefile-with-me
     linux的使用: use-linux
     操作系统: computer-operation
@@ -120,7 +131,6 @@ tag_map:
     开发笔记: develop-note
     汇编: assembly
     破解: heck
-    
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -148,11 +158,11 @@ deploy:
   branch: master
 
  # mermaid chart
-mermaid: ## mermaid url https://github.com/knsv/mermaid
-  enable: true  # default true
-  version: "7.1.2" # default v7.1.2
-  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
-    #startOnload: true  // default true
+#mermaid: ## mermaid url https://github.com/knsv/mermaid
+#  enable: true  # default true
+#  version: "7.1.2" # default v7.1.2
+#  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+#    #startOnload: true  // default true
 
 jsonContent:
     meta: false
