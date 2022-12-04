@@ -97,10 +97,12 @@ category_map:
   最好的cpp教程: the-best-cpp-course
   C程序设计语言: the_c_programming_language
   商城: shopping_mall
+  家家乐商城: family_happy_mall
   技巧篇: taps
   配置篇: config
   前端篇: front
   功能篇: function
+  开篇: first_page
 
 tag_map:
     笔记: note

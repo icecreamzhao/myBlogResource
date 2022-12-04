@@ -11,8 +11,8 @@ tags:
 - linux
 ---
 
-[第一天的笔记-基本的命令和使用方法](/read-note/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
-[第二天的笔记-操作文件](/read-note/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
+[第一天的笔记-基本的命令和使用方法](/note/read_note/The_Linux_Command_Line/The-Linux-Command-Line-read-note-1Day.html)
+[第二天的笔记-操作文件](/note/read_note/The_Linux_Command_Line/The-Linux-Command-Line-read-note-2Day.html)
 
 # 总结
 
